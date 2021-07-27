@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "@lukeshay/next-ga",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
@@ -25,8 +25,8 @@
     "watch": "../../scripts/watch-web.sh"
   },
   "peerDependencies": {
-    "react": ">=17",
-    "next": ">=11"
+    "next": ">=11",
+    "react": ">=17"
   },
   "author": "Luke Shay",
   "size-limit": [
