@@ -9,7 +9,7 @@
     "new": "tsdx create",
     "size": "lerna run size",
     "test": "lerna run test",
-    "release": "lerna run release"
+    "release": "lerna version"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
