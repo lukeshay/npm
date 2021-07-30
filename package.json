@@ -9,7 +9,7 @@
     "new": "tsdx create",
     "size": "lerna run size",
     "test": "lerna run test",
-    "release": "lerna version",
+    "release": "lerna version --no-git-tag-version --no-push",
     "publish": "lerna publish from-package"
   },
   "devDependencies": {
