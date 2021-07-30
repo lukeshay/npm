@@ -10,4 +10,3 @@ export const useAppInit = () => {
     return () => router.events.off('routeChangeComplete', pageView);
   }, [router]);
 };
-
