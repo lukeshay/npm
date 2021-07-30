@@ -5,7 +5,9 @@
   "command": {
     "version": {
       "exact": true,
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "noGitTagVersion": true,
+      "noPush": true
     },
     "publish": {
       "npmClient": "npm",
