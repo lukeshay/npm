@@ -12,8 +12,8 @@
     "test": "lerna run test",
     "prerelease": "run-p lint build test",
     "release": "lerna version --no-git-tag-version --no-push",
-    "prepublish": "run-p lint build test",
-    "publish": "lerna publish from-package"
+    "prenpm": "run-p lint build test",
+    "npm": "lerna publish from-package"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
