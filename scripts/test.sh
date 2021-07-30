@@ -4,7 +4,7 @@ set -e
 tsdxArgs=()
 
 # Add default arguments
-tsdxArgs+=("test" "--passWithNoTests")
+tsdxArgs+=("test" "--passWithNoTests" "--coverage")
 
 # Add arguments based on environment variables
 if [ -n "$CI" ]; then
