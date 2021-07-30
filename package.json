@@ -8,7 +8,8 @@
     "lint": "lerna run lint",
     "new": "tsdx create",
     "size": "lerna run size",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "release": "lerna run release"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
