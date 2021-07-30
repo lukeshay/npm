@@ -9,7 +9,7 @@ tsdxArgs+=("test" "--passWithNoTests")
 # Add arguments based on environment variables
 if [ -n "$CI" ]; then
   tsdxArgs+=("--maxWorkers=4")
-  tsdxArgs+=("--ci")
+  tsdxArgs+=("--ci ")
 fi
 
 # Passthrough arguments and flags
