@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "author": "Luke Shay <https://lukeshay.com>",
   "scripts": {
     "analyze": "lerna run analyze",
     "build": "lerna run build",
