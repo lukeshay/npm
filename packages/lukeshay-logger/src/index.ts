@@ -1,9 +1,7 @@
-import { createLogger, format, LoggerOptions, transports } from 'winston';
+import winston, { format, LoggerOptions, transports } from 'winston';
 
-let logger = createLogger();
-
-export function configureVercel() {
-  logger = createLogger({
+export const configureVercel = () => {
+  configureCustom({
     level: 'silly',
     exitOnError: false,
     format: format.json(),
@@ -18,12 +16,10 @@ export function configureVercel() {
       region: process.env.VERCEL_REGION,
     },
   });
-}
+};
 
-export function configureCustom(opts: LoggerOptions) {
-  logger = createLogger(opts);
-}
+export const configureCustom = (opts: LoggerOptions) => {
+  winston.configure(opts);
+};
 
-export { LoggerOptions };
-
-export default logger;
+export default winston;
