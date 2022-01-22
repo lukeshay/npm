@@ -39,12 +39,6 @@
   "dependencies": {
     "winston": "3.4.0"
   },
-  "eslintConfig": {
-    "extends": "get-off-my-lawn",
-    "rules": {
-      "unicorn/prefer-export-from": "off"
-    }
-  },
   "prettier": "../../.prettierrc.cjs",
   "jest": {
     "preset": "../../jest.config.cjs"

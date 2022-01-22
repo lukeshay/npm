@@ -50,12 +50,6 @@
   "dependencies": {
     "http-status-codes": "2.2.0"
   },
-  "eslintConfig": {
-    "extends": "get-off-my-lawn",
-    "rules": {
-      "unicorn/prefer-export-from": "off"
-    }
-  },
   "prettier": "../../.prettierrc.cjs",
   "jest": {
     "preset": "../../jest.config.cjs"
