@@ -27,5 +27,6 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - run: npm i -g npm@8
       - run: npm ci
+      - run: npm rebuild
       - run: npm run bootstrap
       - run: npm run ${{ matrix.cmd }}
