@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "@lukeshay/next-router",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",

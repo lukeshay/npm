@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/LukeShay/npm/compare/v0.3.0...v0.3.2) (2022-01-22)
+
+
+### Bug Fixes
+
+* export non deprecated http-statuses ([#1](https://github.com/LukeShay/npm/issues/1)) ([8f1ee69](https://github.com/LukeShay/npm/commit/8f1ee69221ab2c70af10337ead58eef6b4189995))
+
+
+
+
+
 ## [0.3.1](https://github.com/LukeShay/npm/compare/v0.3.0...v0.3.1) (2021-12-03)
 
 **Note:** Version bump only for package @lukeshay/next-middleware
