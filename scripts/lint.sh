@@ -12,19 +12,16 @@ echo $RELATIVE_TARGET_DIR
 
 pushd $ROOT_DIR > /dev/null
 
-tsdxArgs=()
-
-# Add script name
-tsdxArgs+=("lint")
+eslintArgs=()
 
 # Add default arguments
-tsdxArgs+=($RELATIVE_TARGET_DIR)
+eslintArgs+=($RELATIVE_TARGET_DIR)
 
 # Passthrough arguments and flags
-tsdxArgs+=($@)
+eslintArgs+=($@)
 
 # Execute
-npm exec -- tsdx "${tsdxArgs[@]}"
+npm exec -- eslint "${eslintArgs[@]}"
 
 popd > /dev/null
 
