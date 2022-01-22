@@ -16,7 +16,8 @@
     "release": "lerna version --no-git-tag-version --no-push",
     "prenpm": "run-p lint build test",
     "npm": "lerna publish from-package",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "@jest/types": "^27.4.2",

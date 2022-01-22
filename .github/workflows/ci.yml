@@ -19,14 +19,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.13.2
-      - uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-      - run: apt-get remove nodejs
-      - run: apt autoremove
+          cache: 'npm'
       - run: npm i -g npm@8
       - run: npm ci
       - run: npm run bootstrap
