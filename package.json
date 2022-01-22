@@ -15,7 +15,8 @@
     "prerelease": "run-p lint build test",
     "release": "lerna version --no-git-tag-version --no-push",
     "prenpm": "run-p lint build test",
-    "npm": "lerna publish from-package"
+    "npm": "lerna publish from-package",
+    "bootstrap": "lerna bootstrap"
   },
   "devDependencies": {
     "@jest/types": "^27.4.2",

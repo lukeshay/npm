@@ -1868,7 +1868,7 @@
   "resolved" "file:packages/lukeshay-logger"
   "version" "0.3.1"
   dependencies:
-    "winston" "^3.3.3"
+    "winston" "3.4.0"
 
 "@lukeshay/next-ga@file:/Users/lshay/Developer/npm/packages/lukeshay-next-ga":
   "resolved" "file:packages/lukeshay-next-ga"
