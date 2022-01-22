@@ -25,6 +25,8 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - run: apt-get remove nodejs
+      - run: apt autoremove
       - run: npm i -g npm@8
       - run: npm ci
       - run: npm run bootstrap
