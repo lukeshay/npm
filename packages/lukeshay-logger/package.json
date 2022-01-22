@@ -13,11 +13,12 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=14"
+    "npm": ">=7",
+    "node": ">=16"
   },
   "scripts": {
     "analyze": "size-limit --why",
-    "build": "../../scripts/build-web.sh",
+    "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
     "prepack": "npm run build",
     "size": "size-limit",
@@ -36,6 +37,10 @@
     }
   ],
   "dependencies": {
-    "winston": "^3.3.3"
+    "winston": "3.4.0"
+  },
+  "prettier": "../../.prettierrc.cjs",
+  "jest": {
+    "preset": "../../jest.config.cjs"
   }
 }

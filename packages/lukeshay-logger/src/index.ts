@@ -1,29 +1,33 @@
-import { createLogger, format, LoggerOptions, transports } from 'winston';
+import { createLogger, format, transports } from 'winston';
+import type { LoggerOptions } from 'winston';
 
+// eslint-disable-next-line import/no-mutable-exports
 let logger = createLogger();
 
-export function configureVercel() {
+const configureCustom = (opts: LoggerOptions): void => {
+  logger = createLogger(opts);
+};
+
+const configureVercel = (): void => {
   configureCustom({
-    level: 'silly',
+    defaultMeta: {
+      commit: process.env.VERCEL_GIT_COMMIT_SHA,
+      environment: process.env.VERCEL_ENV,
+      region: process.env.VERCEL_REGION,
+    },
     exitOnError: false,
     format: format.json(),
+    level: 'silly',
     transports: [
       new transports.Console({
         format: format.simple(),
       }),
     ],
-    defaultMeta: {
-      environment: process.env.VERCEL_ENV || 'local',
-      commit: process.env.VERCEL_GIT_COMMIT_SHA,
-      region: process.env.VERCEL_REGION,
-    },
   });
-}
+};
 
-export function configureCustom(opts: LoggerOptions) {
-  logger = createLogger(opts);
-}
+export type { LoggerOptions };
 
-export { LoggerOptions, format, transports };
+export { configureCustom, configureVercel, createLogger, format, transports };
 
 export default logger;

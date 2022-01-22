@@ -13,11 +13,12 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=14"
+    "npm": ">=7",
+    "node": ">=16"
   },
   "scripts": {
     "analyze": "size-limit --why",
-    "build": "../../scripts/build-web.sh",
+    "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
     "prepack": "npm run build",
     "size": "size-limit",
@@ -40,10 +41,15 @@
     }
   ],
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "next": "^12.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
+    "next": "12.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "prettier": "../../.prettierrc.cjs",
+  "jest": {
+    "preset": "../../jest.config.cjs",
+    "collectCoverage": false
   }
 }
