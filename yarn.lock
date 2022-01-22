@@ -4904,10 +4904,10 @@
   optionalDependencies:
     "source-map" "~0.6.1"
 
-"eslint-config-get-off-my-lawn@7.0.0-beta.5":
-  "integrity" "sha512-6TUA/RB4IPmxZ8KN5qKs157sGXk9SrMX8myLf4AMOoXhrXKx1g7dFChPqmlXhsE8rcbUPcmby4J3SK6ljvV2uw=="
-  "resolved" "https://registry.npmjs.org/eslint-config-get-off-my-lawn/-/eslint-config-get-off-my-lawn-7.0.0-beta.5.tgz"
-  "version" "7.0.0-beta.5"
+"eslint-config-get-off-my-lawn@7.0.0-beta.7":
+  "integrity" "sha512-ivC9Rqb4oA2lkXZXs2aAgo8tbgSwhpdZdj4q/QTuBtfaQITYfiy/2OrjcMROMJM+W2hQ6cdD2/y1idiRkO2o8Q=="
+  "resolved" "https://registry.npmjs.org/eslint-config-get-off-my-lawn/-/eslint-config-get-off-my-lawn-7.0.0-beta.7.tgz"
+  "version" "7.0.0-beta.7"
   dependencies:
     "@babel/core" "7.16.10"
     "@babel/eslint-parser" "7.16.5"
@@ -4936,7 +4936,7 @@
     "fs-extra" "10.0.0"
     "merge-anything" "4.0.2"
     "semver" "7.3.5"
-    "typescript" "4.5.4"
+    "typescript" "4.5.5"
 
 "eslint-config-prettier@^6.0.0":
   "integrity" "sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw=="
@@ -11696,11 +11696,6 @@
   "integrity" "sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
   "version" "4.5.5"
-
-"typescript@4.5.4":
-  "integrity" "sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.4.tgz"
-  "version" "4.5.4"
 
 "uglify-js@^3.1.4":
   "integrity" "sha512-R/tiGB1ZXp2BC+TkRGLwj8xUZgdfT2f4UZEgX6aVjJ5uttPrr4fYmwTWDGqVnBCLbOXRMY6nr/BTbwCtVfps0g=="

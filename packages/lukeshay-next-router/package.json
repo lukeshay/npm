@@ -53,7 +53,6 @@
   "eslintConfig": {
     "extends": "get-off-my-lawn",
     "rules": {
-      "react/jsx-filename-extension": "off",
       "unicorn/prefer-export-from": "off"
     }
   },
