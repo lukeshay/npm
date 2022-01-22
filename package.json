@@ -12,7 +12,7 @@
     "new": "tsdx create",
     "size": "lerna run size",
     "test": "lerna run test",
-    "prerelease": "run-p lint build test",
+    "prerelease": "run-p lint build test prettier:check",
     "release": "lerna version --no-git-tag-version --no-push",
     "prenpm": "run-p lint build test",
     "npm": "lerna publish from-package",
