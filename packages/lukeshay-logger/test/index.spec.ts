@@ -1,7 +1,8 @@
 import { createLogger, transports, format } from 'winston';
 
-import logger from '../src/index';
-import * as loggerExports from '../src/index';
+import * as loggerExports from '../src';
+
+const logger = loggerExports.default;
 
 import chance from './chance';
 
@@ -11,11 +12,16 @@ jest.mock('winston', () => {
   return {
     ...winston,
     createLogger: jest.fn().mockReturnValue({
+      _destroy: jest.fn(),
+      _final: jest.fn(),
+      _flush: jest.fn(),
+      _read: jest.fn(),
+      _transform: jest.fn(),
+      _write: jest.fn(),
       alert: jest.fn(),
       crit: jest.fn(),
       data: jest.fn(),
       debug: jest.fn(),
-      emerg: jest.fn(),
       error: jest.fn(),
       help: jest.fn(),
       http: jest.fn(),
@@ -27,12 +33,6 @@ jest.mock('winston', () => {
       verbose: jest.fn(),
       warn: jest.fn(),
       warning: jest.fn(),
-      _destroy: jest.fn(),
-      _flush: jest.fn(),
-      _transform: jest.fn(),
-      _final: jest.fn(),
-      _write: jest.fn(),
-      _read: jest.fn(),
     }),
   };
 });

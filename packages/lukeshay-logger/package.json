@@ -18,8 +18,10 @@
   },
   "scripts": {
     "analyze": "size-limit --why",
-    "build": "../../scripts/build.sh",
+    "build": "../../scripts/build.sh --target node",
     "lint": "../../scripts/lint.sh",
+    "lint:fix": "npm run lint -- --fix",
+    "clean": "../../scripts/clean.sh",
     "prepack": "npm run build",
     "size": "size-limit",
     "test": "../../scripts/test.sh",
@@ -29,11 +31,19 @@
   "size-limit": [
     {
       "path": "dist/index.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "350 KB",
+      "gzip": false,
+      "ignore": [
+        "fs"
+      ]
     },
     {
       "path": "dist/index.esm.js",
-      "limit": "10 KB"
+      "limit": "350 KB",
+      "gzip": false,
+      "ignore": [
+        "fs"
+      ]
     }
   ],
   "dependencies": {

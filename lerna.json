@@ -1,9 +1,7 @@
 {
   "npmClient": "npm",
   "useWorkspaces": true,
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "command": {
     "version": {
       "exact": true,
@@ -11,10 +9,7 @@
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": [
-        "main",
-        "canary"
-      ],
+      "allowBranch": ["main", "canary"],
       "registry": "https://registry.npmjs.org/"
     }
   },

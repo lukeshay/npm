@@ -20,6 +20,8 @@
     "analyze": "size-limit --why",
     "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
+    "lint:fix": "npm run lint -- --fix",
+    "clean": "../../scripts/clean.sh",
     "prepack": "npm run build",
     "size": "size-limit",
     "test": "../../scripts/test.sh",

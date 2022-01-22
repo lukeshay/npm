@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        cmd: ['build', 'test', 'lint', 'prettier:check']
+        cmd: ['build', 'test', 'lint', 'prettier:check', 'size']
     name: ${{ matrix.cmd }}
     steps:
       - uses: actions/checkout@v2

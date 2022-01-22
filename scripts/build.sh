@@ -4,7 +4,7 @@ set -e
 tsdxArgs=()
 
 # Add script name
-tsdxArgs+=("build" "--name" "lukeshay" "--format" "cjs,esm" "--tsconfig" "./tsconfig.build.json")
+tsdxArgs+=("build" "--name" "index" "--format" "cjs,esm" "--tsconfig" "./tsconfig.build.json")
 
 # Passthrough arguments and flags
 tsdxArgs+=($@)
