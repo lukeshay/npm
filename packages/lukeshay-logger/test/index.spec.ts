@@ -2,13 +2,15 @@ import { createLogger, transports, format } from 'winston';
 
 import * as loggerExports from '../src';
 
-const logger = loggerExports.default;
-
 import chance from './chance';
 
+const logger = loggerExports.default;
+
 jest.mock('winston', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const winston = jest.requireActual('winston');
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...winston,
     createLogger: jest.fn().mockReturnValue({
@@ -116,8 +118,8 @@ describe('logger', () => {
           region: vercelRegion,
         },
         exitOnError: false,
-        level: 'silly',
         format: format.json(),
+        level: 'silly',
       };
     });
 

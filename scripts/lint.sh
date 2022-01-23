@@ -10,7 +10,7 @@ RELATIVE_TARGET_DIR="${TARGET_DIR/$ROOT_DIR/}/"
 
 pushd $ROOT_DIR > /dev/null
 
-eslintArgs=()
+eslintArgs=("--ignore-path" ".gitignore")
 
 # Add default arguments
 eslintArgs+=($RELATIVE_TARGET_DIR)

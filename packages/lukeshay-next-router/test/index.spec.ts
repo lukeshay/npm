@@ -1,27 +1,35 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { Context, HttpMethod, HttpMethods, router, StatusCodes } from '../src/index';
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+import type { Context, HttpMethod } from '../src';
+import { HttpMethods, router, StatusCodes } from '../src';
+
 import chance from './chance';
 
-interface MyContext extends Context {
+type MyContext = Context & {
   name: string;
-}
+};
 
-function handlerArgs(method: HttpMethod): [NextApiRequest, NextApiResponse] {
-  return [
-    { method, body: { [chance.string()]: chance.sentence() } } as NextApiRequest,
-    {
-      status: jest.fn(),
-      json: jest.fn(),
-    } as unknown as NextApiResponse,
-  ];
-}
+const handlerArgs = (method: HttpMethod): [NextApiRequest, NextApiResponse] => [
+  {
+    body: { [chance.string()]: chance.sentence() },
+    method,
+  } as unknown as NextApiRequest,
+  {
+    json: jest.fn(),
+    status: jest.fn(),
+  } as unknown as NextApiResponse,
+];
 
 describe('middleware', () => {
   test('should construct', () => {
     const mid = router<MyContext>();
 
     mid.wrapper(async (req, res, handler) => {
-      await handler({ req, res, name: 'chicken' });
+      await handler({
+        name: 'chicken',
+        req,
+        res,
+      });
     });
   });
 
@@ -31,10 +39,14 @@ describe('middleware', () => {
 
       const [req, res] = handlerArgs(method);
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
       await (router<MyContext>() as any)[method.toLowerCase()](handler).handler()(req, res);
 
       expect(handler).toHaveBeenCalledTimes(1);
-      expect(handler).toHaveBeenCalledWith({ req, res });
+      expect(handler).toHaveBeenCalledWith({
+        req,
+        res,
+      });
     });
   });
 
