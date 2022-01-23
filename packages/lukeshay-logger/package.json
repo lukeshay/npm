@@ -35,7 +35,12 @@
       "limit": "350 KB",
       "gzip": false,
       "ignore": [
-        "fs"
+        "fs",
+        "os",
+        "path",
+        "http",
+        "https",
+        "zlib"
       ]
     },
     {
@@ -43,7 +48,12 @@
       "limit": "350 KB",
       "gzip": false,
       "ignore": [
-        "fs"
+        "fs",
+        "os",
+        "path",
+        "http",
+        "https",
+        "zlib"
       ]
     }
   ],
