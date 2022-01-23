@@ -18,6 +18,7 @@ If anybody finds any bugs, please create an issue and submit a PR if you would l
 | clean                     | Runs `rimraf` on dist/ and .jest-\*                                                          |
 | size                      | Verifies the packages sizes meet requirements                                                |
 | analyze                   | Analyzes the size of the packages                                                            |
+| check                     | Runs all the commands that are used to validate the code                                     |
 | release                   | Bumps versions of packages                                                                   |
 | npm                       | Publishes packages                                                                           |
 | bootstrap                 | Setups repo for the first time using lerna                                                   |
