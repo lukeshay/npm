@@ -3,6 +3,7 @@
   "private": true,
   "author": "Luke Shay <https://lukeshay.com>",
   "scripts": {
+    "preanalyze": "npm run build",
     "analyze": "lerna run analyze",
     "build": "lerna run build",
     "prettier": "prettier --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .gitignore './**/*'",
@@ -12,6 +13,7 @@
     "lint:fix": "lerna run lint:fix",
     "clean": "lerna run clean",
     "new": "tsdx create",
+    "presize": "npm run build",
     "size": "lerna run size",
     "test": "lerna run test",
     "check": "run-p lint build test prettier:check && npm run size",
