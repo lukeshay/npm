@@ -2,9 +2,13 @@
   "license": "MIT",
   "name": "@lukeshay/next-router",
   "version": "0.3.2",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "./dist/main/index.js",
+  "module": "./dist/module/index.js",
+  "typings": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./dist/module/index.js",
+    "require": "./dist/main/index.js"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -18,13 +22,11 @@
     "node": ">=16"
   },
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "../../scripts/build.sh --target node",
+    "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
     "clean": "../../scripts/clean.sh",
     "prepack": "npm run build",
-    "size": "size-limit",
     "test": "../../scripts/test.sh",
     "watch": "../../scripts/watch-web.sh"
   },

@@ -4,11 +4,16 @@ set -e
 tsdxArgs=()
 
 # Add script name
-tsdxArgs+=("build" "--name" "index" "--format" "cjs,esm" "--tsconfig" "./tsconfig.build.json")
+tsdxArgs+=("-p" "./tsconfig.build.json")
 
 # Passthrough arguments and flags
-tsdxArgs+=($@)
+# tsdxArgs+=($@)
 
 # Execute
-npm exec -- tsdx "${tsdxArgs[@]}"
+npm exec -- rimraf dist
+
+npm exec -- tsc --module es6 --outDir ./dist/main "${tsdxArgs[@]}"
+npm exec -- tsc --module commonjs --outDir ./dist/module "${tsdxArgs[@]}"
+
+npm exec -- tsc --declaration --outDir ./dist/types "${tsdxArgs[@]}"
 
