@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/LukeShay/npm/compare/v0.3.3...v0.3.4) (2022-01-24)
+
+### Bug Fixes
+
+- fixed build ([46405ac](https://github.com/LukeShay/npm/commit/46405acd5b11b4f89c8c6c2c5ed49a909cb0cc27))
+
 ## [0.3.3](https://github.com/LukeShay/npm/compare/v0.3.2...v0.3.3) (2022-01-24)
 
 ### Bug Fixes
