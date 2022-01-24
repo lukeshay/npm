@@ -12,8 +12,8 @@ tsdxArgs+=("-p" "./tsconfig.build.json")
 # Execute
 npm exec -- rimraf dist
 
-npm exec -- tsc --module es6 --outDir ./dist/main "${tsdxArgs[@]}"
-npm exec -- tsc --module commonjs --outDir ./dist/module "${tsdxArgs[@]}"
+npm exec -- tsc --module es6 --outDir ./dist/module "${tsdxArgs[@]}"
+npm exec -- tsc --module commonjs --outDir ./dist/main "${tsdxArgs[@]}"
 
 npm exec -- tsc --declaration --outDir ./dist/types "${tsdxArgs[@]}"
 
