@@ -45,7 +45,8 @@
     "typescript": "4.5.5"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "husky": {
     "hooks": {
