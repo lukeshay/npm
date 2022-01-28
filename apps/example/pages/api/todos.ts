@@ -1,12 +1,13 @@
 import * as yup from 'yup';
 import * as uuid from 'uuid';
 
-import router, { Handler } from '../../server/router';
+import router from '../../server/router';
+import type { Handler } from '../../server/router';
 import { validate } from '../../server/services/schema-server';
 
 const postBodySchema = yup.object().shape({
-  content: yup.string().required(),
   completed: yup.boolean().default(false).optional(),
+  content: yup.string().required(),
 });
 
 const putBodySchema = postBodySchema.shape({
@@ -21,19 +22,19 @@ type Todo = {
 
 const TODOS: Todo[] = [
   {
-    id: uuid.v4(),
     completed: false,
     content: 'Learn Next.js',
+    id: uuid.v4(),
   },
   {
-    id: uuid.v4(),
     completed: true,
     content: 'Deploy apps',
+    id: uuid.v4(),
   },
   {
-    id: uuid.v4(),
     completed: false,
     content: 'Learn GraphQL',
+    id: uuid.v4(),
   },
 ];
 
@@ -48,7 +49,7 @@ const post: Handler = async (req, res) => {
   res.status(200).json(todo);
 };
 
-const get: Handler = async (_, res) => {
+const get: Handler = (_, res) => {
   res.status(200).json(TODOS);
 };
 

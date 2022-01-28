@@ -2,24 +2,27 @@ import type { NextPage } from 'next';
 import { Container, Table, Checkbox } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
-const Home: NextPage = () => {
-  const [todos, setTodos] = useState<{ id: string; content: string; completed: boolean }[]>([]);
+type Todo = {
+  id: string;
+  completed: boolean;
+  content: string;
+};
 
-  const fetchTodos = async () => {
+const Home: NextPage = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const fetchTodos = async (): Promise<void> => {
     const response = await fetch('/api/todos');
-    const todos = await response.json();
-    setTodos(todos);
+    const fetchedTodos = (await response.json()) as Todo[];
+
+    setTodos(fetchedTodos);
   };
 
   useEffect(() => {
-    fetch('/api/todos')
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data);
-      });
+    void fetchTodos();
   });
 
-  const toggleTodo = async (id: string) => {
+  const toggleTodo = async (id: string): Promise<void> => {
     const todo = todos.find((t) => t.id === id);
 
     if (!todo) {
@@ -27,11 +30,14 @@ const Home: NextPage = () => {
     }
 
     await fetch(`/api/todos`, {
-      method: 'PUT',
+      body: JSON.stringify({
+        ...todo,
+        completed: !todo.completed,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ ...todos.find((todo) => todo.id === id), completed: !todo.completed }),
+      method: 'PUT',
     });
 
     await fetchTodos();
@@ -42,14 +48,18 @@ const Home: NextPage = () => {
       <Table m="md">
         <thead>
           <tr>
-            <th>Todo</th>
+            <th>{'Todo'}</th>
           </tr>
         </thead>
         <tbody>
           {todos.map(({ id, content, completed }) => (
             <tr key={id}>
               <td>
-                <Checkbox checked={completed} label={content} onChange={() => toggleTodo(id)} />
+                <Checkbox
+                  checked={completed}
+                  label={content}
+                  onChange={async (): Promise<void> => toggleTodo(id)}
+                />
               </td>
             </tr>
           ))}
