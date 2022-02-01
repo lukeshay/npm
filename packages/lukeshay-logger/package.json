@@ -60,7 +60,7 @@
     }
   ],
   "dependencies": {
-    "winston": "3.5.0"
+    "winston": "3.5.1"
   },
   "prettier": "../../.prettierrc.cjs",
   "jest": {
