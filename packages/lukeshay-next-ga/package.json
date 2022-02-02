@@ -1,40 +1,44 @@
 {
-  "license": "MIT",
   "name": "@lukeshay/next-ga",
   "version": "0.3.4",
-  "main": "./dist/main/index.js",
-  "module": "./dist/module/index.js",
-  "typings": "dist/types/index.d.ts",
+  "license": "MIT",
+  "author": "Luke Shay <https://lukeshay.com>",
   "exports": {
     "import": "./dist/module/index.js",
     "require": "./dist/main/index.js"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "./dist/main/index.js",
+  "module": "./dist/module/index.js",
+  "typings": "dist/types/index.d.ts",
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md"
   ],
-  "engines": {
-    "npm": ">=7",
-    "node": ">=16"
-  },
   "scripts": {
     "build": "../../scripts/build.sh",
+    "clean": "../../scripts/clean.sh",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
-    "clean": "../../scripts/clean.sh",
     "prepack": "npm run build",
     "test": "../../scripts/test.sh",
     "watch": "../../scripts/watch-web.sh"
+  },
+  "prettier": "../../.prettierrc.cjs",
+  "jest": {
+    "collectCoverage": false,
+    "preset": "../../jest.config.cjs"
   },
   "peerDependencies": {
     "next": ">=11",
     "react": ">=17"
   },
-  "author": "Luke Shay <https://lukeshay.com>",
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "size-limit": [
     {
       "path": "dist/index.cjs.production.min.js",
@@ -44,10 +48,5 @@
       "path": "dist/index.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "prettier": "../../.prettierrc.cjs",
-  "jest": {
-    "preset": "../../jest.config.cjs",
-    "collectCoverage": false
-  }
+  ]
 }
