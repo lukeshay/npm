@@ -9,7 +9,7 @@
     "test": "exit 0"
   },
   "dependencies": {
-    "@lukeshay/next-router": "*",
+    "@lukeshay/next-router": "0.4.0",
     "@mantine/core": "3.6.5",
     "@mantine/hooks": "3.6.5",
     "@mantine/next": "3.6.5",
@@ -28,5 +28,6 @@
     "eslint-config-next": "12.0.10",
     "typescript": "4.5.5"
   },
-  "prettier": "../../.prettierrc.cjs"
+  "prettier": "../../.prettierrc.cjs",
+  "version": "0.4.0"
 }
