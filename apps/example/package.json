@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "17.0.14",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.39",
     "@types/uuid": "8.3.4",
     "@types/yup": "0.29.13",
     "eslint": "8.8.0",
