@@ -39,14 +39,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "size-limit": [
-    {
-      "path": "dist/index.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/index.esm.js",
-      "limit": "10 KB"
-    }
-  ]
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
 }
