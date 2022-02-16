@@ -1,20 +1,11 @@
 {
+  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
-    "module": "ES6",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
     "declaration": false,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
     "jsx": "react",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "ES6",
-    "inlineSourceMap": true
+    "lib": ["dom", "esnext"],
+    "module": "ES6",
+    "moduleResolution": "node",
+    "strict": true
   }
 }

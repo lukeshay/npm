@@ -31,17 +31,17 @@
   "dependencies": {
     "http-status-codes": "2.2.0"
   },
+  "devDependencies": {
+    "prettier": "2.5.1"
+  },
   "peerDependencies": {
     "next": ">=11",
     "react": ">=17"
   },
   "engines": {
-    "node": ">=14"
+    "node": "14.x || 16.x"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "prettier": "2.5.1"
   }
 }

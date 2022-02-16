@@ -1,5 +1,0 @@
-dist/
-.git/
-.yarn/
-node_modules/
-coverage/
