@@ -31,6 +31,12 @@
       "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "*": [
+      "prettier --ignore-unknown --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@lukeshay/next-ga": "file:packages/lukeshay-next-ga",
     "@lukeshay/next-router": "file:packages/lukeshay-next-router"
@@ -60,11 +66,5 @@
   },
   "engines": {
     "node": "14.x || 16.x"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --ignore-unknown --write",
-      "git add"
-    ]
   }
 }
