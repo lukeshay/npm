@@ -24,12 +24,18 @@
     "npm": "lerna publish from-package",
     "bootstrap": "lerna bootstrap",
     "postinstall": "husky install",
-    "sort-package-json": "npx sort-package-json && lerna exec -- npx sort-package-json && npm run prettier:write"
+    "sort-package-json": "npx sort-package-json && lerna exec -- npx sort-package-json && npm run prettier:write && npm run lint:fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run fmt"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --ignore-unknown --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@lukeshay/next-ga": "file:packages/lukeshay-next-ga",
@@ -60,11 +66,5 @@
   },
   "engines": {
     "node": "14.x || 16.x"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --ignore-unknown --write",
-      "git add"
-    ]
   }
 }
