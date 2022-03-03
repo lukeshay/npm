@@ -13,7 +13,7 @@
   "dependencies": {
     "@lukeshay/next-router": "0.4.0",
     "@mantine/core": "3.6.5",
-    "@mantine/hooks": "3.6.7",
+    "@mantine/hooks": "3.6.14",
     "@mantine/next": "3.6.7",
     "next": "12.0.10",
     "react": "17.0.2",
