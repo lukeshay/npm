@@ -13,13 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         cmd: ["test", "lint", "prettier:check"]
-        node-version: ["14", "16"]
     name: ${{ matrix.node-version }} - ${{ matrix.cmd }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
           cache: "npm"
       - run: npm i -g npm@8
       - run: npm ci
@@ -36,17 +35,17 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
           cache: "npm"
       - run: npm i -g npm@8
       - run: npm ci
       - run: npm run bootstrap
       - run: npm rebuild
-      - run: npm run sort-package-json || exit 0
+      - run: npm run prettier:write || exit 0
       - run: git diff-index --quiet HEAD --
       - if: failure() && github.event_name == 'pull_request'
         uses: EndBug/add-and-commit@v8
         with:
           author_name: "GitHub Actions"
           author_email: "actions@github.com"
-          message: "Sorted package.json files and ran Prettier"
+          message: "Ran Prettier"
