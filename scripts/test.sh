@@ -1,20 +1,12 @@
 #!/bin/bash
 set -e
 
-tsdxArgs=()
+vitestArgs=()
 
-# Add default arguments
-tsdxArgs+=("test" "--passWithNoTests" "--coverage")
-
-# Add arguments based on environment variables
-if [ -n "$CI" ]; then
-  tsdxArgs+=("--maxWorkers=4")
-  tsdxArgs+=("--ci ")
-fi
+vitestArgs+=("run")
 
 # Passthrough arguments and flags
-tsdxArgs+=($@)
+vitestArgs+=($@)
 
 # Execute
-npm exec -- tsdx "${tsdxArgs[@]}"
-
+npm exec -- vitest "${vitestArgs[@]}"

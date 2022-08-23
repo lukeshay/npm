@@ -25,14 +25,12 @@
     "watch": "../../scripts/watch-web.sh"
   },
   "prettier": "../../.prettierrc.cjs",
-  "jest": {
-    "preset": "../../jest.config.cjs"
-  },
   "dependencies": {
     "http-status-codes": "2.2.0"
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "vitest": "^0.22.1"
   },
   "peerDependencies": {
     "next": "12.x",

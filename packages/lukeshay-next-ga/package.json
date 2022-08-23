@@ -25,12 +25,9 @@
     "watch": "../../scripts/watch-web.sh"
   },
   "prettier": "../../.prettierrc.cjs",
-  "jest": {
-    "collectCoverage": false,
-    "preset": "../../jest.config.cjs"
-  },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "vitest": "^0.22.1"
   },
   "peerDependencies": {
     "next": "12.x",
