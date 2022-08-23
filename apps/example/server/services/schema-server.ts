@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
 const validate = async <T1, T2, T3, T4, T5>(
   // @ts-expect-error

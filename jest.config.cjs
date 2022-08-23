@@ -1,9 +1,9 @@
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
-  coverageDirectory: '.jest-coverage',
-  cacheDirectory: '.jest-cache',
-  coverageReporters: ['lcov', 'text', 'html'],
+  cacheDirectory: ".jest-cache",
   collectCoverage: true,
+  coverageDirectory: ".jest-coverage",
+  coverageReporters: ["lcov", "text", "html"],
   coverageThreshold: {
     global: {
       branches: 80,

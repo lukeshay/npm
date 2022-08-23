@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import { Container, Table, Checkbox } from '@mantine/core';
-import { useEffect, useState } from 'react';
+import type { NextPage } from "next";
+import { Container, Table, Checkbox } from "@mantine/core";
+import { useEffect, useState } from "react";
 
 type Todo = {
   id: string;
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const fetchTodos = async (): Promise<void> => {
-    const response = await fetch('/api/todos');
+    const response = await fetch("/api/todos");
     const fetchedTodos = (await response.json()) as Todo[];
 
     setTodos(fetchedTodos);
@@ -35,9 +35,9 @@ const Home: NextPage = () => {
         completed: !todo.completed,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      method: 'PUT',
+      method: "PUT",
     });
 
     await fetchTodos();
@@ -48,18 +48,14 @@ const Home: NextPage = () => {
       <Table m="md">
         <thead>
           <tr>
-            <th>{'Todo'}</th>
+            <th>{"Todo"}</th>
           </tr>
         </thead>
         <tbody>
           {todos.map(({ id, content, completed }) => (
             <tr key={id}>
               <td>
-                <Checkbox
-                  checked={completed}
-                  label={content}
-                  onChange={async (): Promise<void> => toggleTodo(id)}
-                />
+                <Checkbox checked={completed} label={content} onChange={async (): Promise<void> => toggleTodo(id)} />
               </td>
             </tr>
           ))}

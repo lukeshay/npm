@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { StatusCodes } from 'http-status-codes';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { StatusCodes } from "http-status-codes";
 
-import type { HttpMethod } from '../src/enums/http-methods';
-import { HttpMethods } from '../src/enums/http-methods';
-import { router } from '../src/wrapper';
-import type { Router } from '../src/wrapper';
+import type { HttpMethod } from "../src/enums/http-methods";
+import { HttpMethods } from "../src/enums/http-methods";
+import { router } from "../src/wrapper";
+import type { Router } from "../src/wrapper";
 
-import chance from './chance';
+import chance from "./chance";
 
 type Context = {
   req: NextApiRequest;
@@ -27,7 +27,7 @@ const handlerArgs = (method: HttpMethod): [NextApiRequest, NextApiResponse] => [
   } as unknown as NextApiResponse,
 ];
 
-describe('wrapper', () => {
+describe("wrapper", () => {
   let baseRouter: Router<Handler>;
 
   beforeEach(() => {
@@ -39,7 +39,7 @@ describe('wrapper', () => {
     });
   });
 
-  test('should construct', () => {
+  test("should construct", () => {
     expect(baseRouter).toBeDefined();
   });
 
@@ -60,11 +60,11 @@ describe('wrapper', () => {
     });
   });
 
-  test('should export StatusCodes', () => {
+  test("should export StatusCodes", () => {
     expect(StatusCodes).toBeDefined();
   });
 
-  test('should call notFound', async () => {
+  test("should call notFound", async () => {
     const handler = jest.fn();
 
     await baseRouter.notFound(handler).handler()(...handlerArgs(HttpMethods.TRACE));
@@ -72,7 +72,7 @@ describe('wrapper', () => {
     expect(handler).toBeCalledTimes(1);
   });
 
-  test('should return early if there is no handler', async () => {
+  test("should return early if there is no handler", async () => {
     const wrapper = jest.fn();
 
     const [req, res] = handlerArgs(HttpMethods.TRACE);

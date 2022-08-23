@@ -30,14 +30,14 @@
     "preset": "../../jest.config.cjs"
   },
   "devDependencies": {
-    "prettier": "2.5.1"
+    "prettier": "2.7.1"
   },
   "peerDependencies": {
-    "next": ">=11",
-    "react": ">=17"
+    "next": "12.x",
+    "react": "18.x"
   },
   "engines": {
-    "node": "14.x || 16.x"
+    "node": "16.x"
   },
   "publishConfig": {
     "access": "public"

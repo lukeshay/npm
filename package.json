@@ -23,13 +23,7 @@
     "prenpm": "npm run check",
     "npm": "lerna publish from-package",
     "bootstrap": "lerna bootstrap",
-    "postinstall": "husky install",
-    "sort-package-json": "npx sort-package-json && lerna exec -- npx sort-package-json && npm run prettier:write && npm run lint:fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "git-pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*": [
@@ -39,32 +33,30 @@
   },
   "dependencies": {
     "@lukeshay/next-ga": "file:packages/lukeshay-next-ga",
-    "@lukeshay/next-router": "file:packages/lukeshay-next-router"
+    "@lukeshay/next-router": "file:packages/lukeshay-next-router",
+    "@lukeshay/prettier-config": "file:packages/lukeshay-prettier-config"
   },
   "devDependencies": {
-    "@tsconfig/node14": "1.0.1",
+    "@tsconfig/node16": "1.0.3",
     "@types/chance": "1.1.3",
-    "@types/jest": "27.4.0",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.11",
+    "@types/jest": "28.1.7",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
     "chance": "1.1.8",
-    "eslint": "8.9.0",
-    "eslint-config-get-off-my-lawn": "7.0.0",
-    "eslint-plugin-sonarjs": "0.11.0",
-    "husky": "7.0.4",
+    "eslint": "8.22.0",
+    "eslint-config-get-off-my-lawn": "7.1.0",
     "lerna": "4.0.0",
-    "lint-staged": "12.3.4",
-    "next": "12.0.10",
+    "lint-staged": "13.0.3",
+    "next": "12.2.5",
     "npm-run-all": "4.1.5",
-    "prettier": "2.5.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "prettier": "2.7.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "rimraf": "3.0.2",
-    "tsdx": "0.14.1",
-    "tslib": "2.3.1",
-    "typescript": "4.5.5"
+    "tslib": "2.4.0",
+    "typescript": "4.7.4"
   },
   "engines": {
-    "node": "14.x || 16.x"
+    "node": "16.x"
   }
 }

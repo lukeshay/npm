@@ -1,14 +1,10 @@
-import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
-import { StatusCodes } from 'http-status-codes';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { StatusCodes } from "http-status-codes";
 
-import { HttpMethods } from './enums/http-methods';
-import type { HttpMethod } from './enums/http-methods';
+import { HttpMethods } from "./enums/http-methods";
+import type { HttpMethod } from "./enums/http-methods";
 
-type Wrapper<HANDLER> = (
-  req: NextApiRequest,
-  res: NextApiResponse,
-  handler: HANDLER,
-) => Promise<void> | void;
+type Wrapper<HANDLER> = (req: NextApiRequest, res: NextApiResponse, handler: HANDLER) => Promise<void> | void;
 
 class Router<HANDLER> {
   private readonly _wrapper: Wrapper<HANDLER>;
@@ -117,8 +113,7 @@ class Router<HANDLER> {
   }
 }
 
-const router = <HANDLER>(wrapper: Wrapper<HANDLER>): Router<HANDLER> =>
-  new Router<HANDLER>(wrapper);
+const router = <HANDLER>(wrapper: Wrapper<HANDLER>): Router<HANDLER> => new Router<HANDLER>(wrapper);
 
 export { Router, router };
 export type { Wrapper };
