@@ -17,7 +17,7 @@
     "clean": "lerna run clean",
     "new": "tsdx create",
     "test": "lerna run test",
-    "check": "run-p lint build test prettier:check",
+    "check": "npm run build && run-p lint test prettier:check",
     "prerelease": "npm run check",
     "release": "lerna version --no-git-tag-version --no-push",
     "prenpm": "npm run check",

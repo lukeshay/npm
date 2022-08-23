@@ -1,1 +1,1 @@
-module.exports = require("./packages/lukeshay-prettier-config/index.cjs");
+module.exports = require("@lukeshay/prettier-config");

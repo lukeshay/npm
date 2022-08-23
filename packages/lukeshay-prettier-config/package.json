@@ -3,12 +3,11 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Luke Shay <https://lukeshay.com>",
-  "exports": {
-    "require": "./index.cjs"
-  },
+  "type": "commonjs",
   "main": "./index.cjs",
   "files": [
     "index.cjs",
+    "merge.cjs",
     "README.md",
     "CHANGELOG.md"
   ],
@@ -26,6 +25,7 @@
     "preset": "../../jest.config.cjs"
   },
   "dependencies": {
+    "merge-anything": "5.0.2",
     "prettier-plugin-packagejson": "2.2.18",
     "prettier-plugin-tailwindcss": "0.1.13"
   },
