@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @lukeshay/next-router
 
-
-
-
-
 # [0.4.0](https://github.com/LukeShay/npm/compare/v0.3.4...v0.4.0) (2022-02-02)
 
 ### Features
