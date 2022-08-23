@@ -1,6 +1,3 @@
-const prettierPluginPackagejson = require("prettier-plugin-packagejson");
-const prettierPluginTailwindcss = require("prettier-plugin-tailwindcss");
-
 const config = {
   overrides: [
     {
@@ -10,7 +7,7 @@ const config = {
       },
     },
   ],
-  plugins: [prettierPluginPackagejson, prettierPluginTailwindcss],
+  plugins: [require("prettier-plugin-packagejson"), require("prettier-plugin-tailwindcss")],
   printWidth: 120,
   trailingComma: "all",
 };

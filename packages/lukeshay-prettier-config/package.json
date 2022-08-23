@@ -16,7 +16,7 @@
     "clean": "exit 0",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
-    "prepack": "npm run build",
+    "prepack": "exit 0",
     "test": "exit 0",
     "watch": "exit 0"
   },
