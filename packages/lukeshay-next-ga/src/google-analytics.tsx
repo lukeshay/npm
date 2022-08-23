@@ -1,7 +1,7 @@
-import React from 'react';
-import type { FC } from 'react';
+import React from "react";
+import type { FC } from "react";
 
-import { GOOGLE_ANALYTICS_ID } from './google-analytics-id';
+import { GOOGLE_ANALYTICS_ID } from "./google-analytics-id";
 
 export type GoogleAnalyticsProps = {};
 
@@ -9,7 +9,9 @@ export const GoogleAnalytics: FC<never> = () => (
   <>
     <script
       async
-      src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID ?? ''}`}
+      src={`https://www.googletagmanager.com/gtag/js?id=${
+        GOOGLE_ANALYTICS_ID ?? ""
+      }`}
     />
     <script
       // eslint-disable-next-line react/no-danger
@@ -18,7 +20,7 @@ export const GoogleAnalytics: FC<never> = () => (
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GOOGLE_ANALYTICS_ID ?? ''}');
+                gtag('config', '${GOOGLE_ANALYTICS_ID ?? ""}');
               `,
       }}
     />

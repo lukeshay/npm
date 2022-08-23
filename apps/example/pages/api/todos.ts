@@ -1,9 +1,9 @@
-import * as yup from 'yup';
-import * as uuid from 'uuid';
+import * as yup from "yup";
+import * as uuid from "uuid";
 
-import router from '../../server/router';
-import type { Handler } from '../../server/router';
-import { validate } from '../../server/services/schema-server';
+import router from "../../server/router";
+import type { Handler } from "../../server/router";
+import { validate } from "../../server/services/schema-server";
 
 const postBodySchema = yup.object().shape({
   completed: yup.boolean().default(false).optional(),
@@ -23,17 +23,17 @@ type Todo = {
 const TODOS: Todo[] = [
   {
     completed: false,
-    content: 'Learn Next.js',
+    content: "Learn Next.js",
     id: uuid.v4(),
   },
   {
     completed: true,
-    content: 'Deploy apps',
+    content: "Deploy apps",
     id: uuid.v4(),
   },
   {
     completed: false,
-    content: 'Learn GraphQL',
+    content: "Learn GraphQL",
     id: uuid.v4(),
   },
 ];
@@ -60,7 +60,7 @@ const put: Handler = async (req, res) => {
 
   if (!currentTodo) {
     res.status(404).json({
-      error: 'Todo not found',
+      error: "Todo not found",
     });
 
     return;

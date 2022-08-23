@@ -1,6 +1,6 @@
-import { HttpMethods, Router, StatusCodes, router } from '../src';
+import { HttpMethods, Router, StatusCodes, router } from "../src";
 
-describe('index', () => {
+describe("index", () => {
   const exports = [HttpMethods, Router, StatusCodes, router];
 
   exports.forEach((exp) => {

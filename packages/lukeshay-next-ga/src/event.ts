@@ -9,7 +9,7 @@ export type Event = {
 
 export const event = ({ action, category, label, value }: Event): void => {
   // @ts-expect-error - this is added by Google analytics
-  window.gtag('event', action, {
+  window.gtag("event", action, {
     event_category: category,
     event_label: label,
     value,

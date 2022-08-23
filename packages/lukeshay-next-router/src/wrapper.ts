@@ -1,13 +1,13 @@
-import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
-import { StatusCodes } from 'http-status-codes';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { StatusCodes } from "http-status-codes";
 
-import { HttpMethods } from './enums/http-methods';
-import type { HttpMethod } from './enums/http-methods';
+import { HttpMethods } from "./enums/http-methods";
+import type { HttpMethod } from "./enums/http-methods";
 
 type Wrapper<HANDLER> = (
   req: NextApiRequest,
   res: NextApiResponse,
-  handler: HANDLER,
+  handler: HANDLER
 ) => Promise<void> | void;
 
 class Router<HANDLER> {
@@ -104,7 +104,9 @@ class Router<HANDLER> {
   /* Returns the Next.js API handler with the routes. */
   public handler(): NextApiHandler {
     return async (req, res) => {
-      const handler = this.handlers[req.method?.toUpperCase() as HttpMethod] ?? this._notFound;
+      const handler =
+        this.handlers[req.method?.toUpperCase() as HttpMethod] ??
+        this._notFound;
 
       if (!handler) {
         res.status(StatusCodes.METHOD_NOT_ALLOWED).end();

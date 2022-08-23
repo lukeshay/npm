@@ -1,13 +1,16 @@
-import { router } from '@lukeshay/next-router';
-import type { Router } from '@lukeshay/next-router';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { router } from "@lukeshay/next-router";
+import type { Router } from "@lukeshay/next-router";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-type Handler = (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void;
+type Handler = (
+  req: NextApiRequest,
+  res: NextApiResponse
+) => Promise<void> | void;
 
 const wrapper = async (
   req: NextApiRequest,
   res: NextApiResponse,
-  handler: Handler,
+  handler: Handler
 ): Promise<void> => {
   await handler(req, res);
 };
