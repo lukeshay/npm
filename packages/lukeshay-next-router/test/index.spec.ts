@@ -1,3 +1,5 @@
+import { describe, test, expect } from "vitest";
+
 import { HttpMethods, Router, StatusCodes, router } from "../src";
 
 describe("index", () => {
