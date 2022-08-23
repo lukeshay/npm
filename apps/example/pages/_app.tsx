@@ -6,10 +6,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <Head>
       <title>{"Router Example"}</title>
-      <meta
-        content="minimum-scale=1, initial-scale=1, width=device-width"
-        name="viewport"
-      />
+      <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
     </Head>
 
     <MantineProvider

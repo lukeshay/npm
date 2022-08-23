@@ -50,10 +50,7 @@ describe("wrapper", () => {
       const [req, res] = handlerArgs(method);
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
-      await (baseRouter as any)[method.toLowerCase()](handler).handler()(
-        req,
-        res
-      );
+      await (baseRouter as any)[method.toLowerCase()](handler).handler()(req, res);
 
       expect(handler).toHaveBeenCalledTimes(1);
       expect(handler).toHaveBeenCalledWith({
@@ -70,9 +67,7 @@ describe("wrapper", () => {
   test("should call notFound", async () => {
     const handler = jest.fn();
 
-    await baseRouter.notFound(handler).handler()(
-      ...handlerArgs(HttpMethods.TRACE)
-    );
+    await baseRouter.notFound(handler).handler()(...handlerArgs(HttpMethods.TRACE));
 
     expect(handler).toBeCalledTimes(1);
   });

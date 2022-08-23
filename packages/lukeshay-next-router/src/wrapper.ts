@@ -4,11 +4,7 @@ import { StatusCodes } from "http-status-codes";
 import { HttpMethods } from "./enums/http-methods";
 import type { HttpMethod } from "./enums/http-methods";
 
-type Wrapper<HANDLER> = (
-  req: NextApiRequest,
-  res: NextApiResponse,
-  handler: HANDLER
-) => Promise<void> | void;
+type Wrapper<HANDLER> = (req: NextApiRequest, res: NextApiResponse, handler: HANDLER) => Promise<void> | void;
 
 class Router<HANDLER> {
   private readonly _wrapper: Wrapper<HANDLER>;
@@ -104,9 +100,7 @@ class Router<HANDLER> {
   /* Returns the Next.js API handler with the routes. */
   public handler(): NextApiHandler {
     return async (req, res) => {
-      const handler =
-        this.handlers[req.method?.toUpperCase() as HttpMethod] ??
-        this._notFound;
+      const handler = this.handlers[req.method?.toUpperCase() as HttpMethod] ?? this._notFound;
 
       if (!handler) {
         res.status(StatusCodes.METHOD_NOT_ALLOWED).end();
@@ -119,8 +113,7 @@ class Router<HANDLER> {
   }
 }
 
-const router = <HANDLER>(wrapper: Wrapper<HANDLER>): Router<HANDLER> =>
-  new Router<HANDLER>(wrapper);
+const router = <HANDLER>(wrapper: Wrapper<HANDLER>): Router<HANDLER> => new Router<HANDLER>(wrapper);
 
 export { Router, router };
 export type { Wrapper };

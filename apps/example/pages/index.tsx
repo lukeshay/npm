@@ -55,11 +55,7 @@ const Home: NextPage = () => {
           {todos.map(({ id, content, completed }) => (
             <tr key={id}>
               <td>
-                <Checkbox
-                  checked={completed}
-                  label={content}
-                  onChange={async (): Promise<void> => toggleTodo(id)}
-                />
+                <Checkbox checked={completed} label={content} onChange={async (): Promise<void> => toggleTodo(id)} />
               </td>
             </tr>
           ))}

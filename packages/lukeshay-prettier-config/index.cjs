@@ -7,10 +7,9 @@ const config = {
       },
     },
   ],
-  plugins: [
-    require("prettier-plugin-packagejson"),
-    require("prettier-plugin-tailwindcss"),
-  ],
+  plugins: [require("prettier-plugin-packagejson"), require("prettier-plugin-tailwindcss")],
   printWidth: 120,
   trailingComma: "all",
 };
+
+module.exports = config;
