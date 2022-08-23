@@ -1,6 +1,6 @@
 {
   "name": "@lukeshay/prettier-config",
-  "version": "0.0.1",
+  "version": "0.4.1",
   "license": "MIT",
   "author": "Luke Shay <https://lukeshay.com>",
   "type": "commonjs",
