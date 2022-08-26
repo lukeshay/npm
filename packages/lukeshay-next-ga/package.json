@@ -30,7 +30,7 @@
     "preset": "../../jest.config.cjs"
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "^2.7.1"
   },
   "peerDependencies": {
     "next": "12.x",

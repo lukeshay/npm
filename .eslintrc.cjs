@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["get-off-my-lawn"],
+  extends: ["@lukeshay/eslint-config"],
   overrides: [
     {
       files: ["test/**/*"],

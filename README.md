@@ -8,9 +8,8 @@ If anybody finds any bugs, please create an issue and submit a PR if you would l
 
 | Command (`npm run <CMD>`) | Description                                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------------------- |
-| prettier                  | Runs `prettier` on all files in the repo that are not in the .gitignore                      |
-| prettier:check            | Runs `prettier --check` on all files in the repo that are not in the .gitignore              |
-| prettier:write            | Runs `prettier --write` on all files in the repo that are not in the .gitignore              |
+| prettier                  | Runs `prettier --check` on all files in the repo that are not in the .gitignore              |
+| prettier:fix              | Runs `prettier --write` on all files in the repo that are not in the .gitignore              |
 | lint                      | Runs `eslint` on JavaScript, TypeScript, and JSON files that are not in the .gitignore       |
 | lint:fix                  | Runs `eslint --fix` on JavaScript, TypeScript, and JSON files that are not in the .gitignore |
 | build                     | Runs `tsdx build` on all packages                                                            |

@@ -5,30 +5,31 @@
   "scripts": {
     "build": "exit 0",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "npm run lint -- --fix",
     "start": "next start",
     "test": "exit 0"
   },
   "prettier": "../../.prettierrc.cjs",
   "dependencies": {
-    "@lukeshay/next-router": "0.4.1",
-    "@mantine/core": "5.2.3",
-    "@mantine/hooks": "5.2.3",
-    "@mantine/next": "5.2.3",
-    "next": "12.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "uuid": "8.3.2",
-    "yup": "0.32.11"
+    "@lukeshay/next-router": "^0.4.1",
+    "@mantine/core": "^5.2.3",
+    "@mantine/hooks": "^5.2.3",
+    "@mantine/next": "^5.2.3",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/node": "18.7.11",
-    "@types/react": "18.0.17",
-    "@types/uuid": "8.3.4",
-    "@types/yup": "0.29.14",
-    "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
-    "prettier": "2.7.1",
-    "typescript": "4.7.4"
+    "@types/node": "^18.7.11",
+    "@types/react": "^18.0.17",
+    "@types/uuid": "^8.3.4",
+    "@types/yup": "^0.29.14",
+    "eslint": "^8.22.0",
+    "eslint-config-next": "^12.2.5",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   }
 }
