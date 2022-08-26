@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "build": "exit 0",
@@ -12,7 +12,7 @@
   },
   "prettier": "../../.prettierrc.cjs",
   "dependencies": {
-    "@lukeshay/next-router": "^0.4.1",
+    "@lukeshay/next-router": "0.5.0",
     "@mantine/core": "^5.2.3",
     "@mantine/hooks": "^5.2.3",
     "@mantine/next": "^5.2.3",
