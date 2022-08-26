@@ -32,6 +32,7 @@
     ]
   },
   "dependencies": {
+    "@lukeshay/eslint-config": "file:packages/lukeshay-eslint-config",
     "@lukeshay/next-ga": "file:packages/lukeshay-next-ga",
     "@lukeshay/next-router": "file:packages/lukeshay-next-router",
     "@lukeshay/prettier-config": "file:packages/lukeshay-prettier-config"
@@ -44,7 +45,6 @@
     "@types/react-dom": "18.0.6",
     "chance": "1.1.8",
     "eslint": "8.22.0",
-    "eslint-config-get-off-my-lawn": "7.1.0",
     "lerna": "4.0.0",
     "lint-staged": "13.0.3",
     "next": "12.2.5",

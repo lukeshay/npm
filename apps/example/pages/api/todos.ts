@@ -3,7 +3,7 @@ import * as uuid from "uuid";
 
 import router from "../../server/router";
 import type { Handler } from "../../server/router";
-import { validate } from "../../server/services/schema-server";
+import { validate } from "../../server/services/schema-service";
 
 const postBodySchema = yup.object().shape({
   completed: yup.boolean().default(false).optional(),

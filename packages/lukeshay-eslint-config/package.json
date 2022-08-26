@@ -1,0 +1,41 @@
+{
+  "name": "@lukeshay/eslint-config",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Luke Shay <https://lukeshay.com>",
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "files": [
+    "index.cjs",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "exit 0",
+    "clean": "exit 0",
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "npm run lint -- --fix",
+    "prepack": "exit 0",
+    "test": "exit 0",
+    "watch": "exit 0"
+  },
+  "prettier": "../../.prettierrc.cjs",
+  "jest": {
+    "preset": "../../jest.config.cjs"
+  },
+  "dependencies": {
+    "eslint-config-get-off-my-lawn": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0"
+  },
+  "peerDependencies": {
+    "eslint": "8.x"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "exit 0",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "npm run lint -- --fix",
     "start": "next start",
     "test": "exit 0"
   },
