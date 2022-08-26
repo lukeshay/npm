@@ -1,17 +1,27 @@
-# @lukeshay/next-router
+# @lukeshay/prettier-config
 
-Adds basic routing to Next.js API routes. Also allows for wrapping handler functions to mutate the context that is being passed in.
+The prettier config I use on my projects.
 
-## Example
+## Getting Started
 
-`pages/api/hello.js`:
+Install using the package manager of your choice.
 
-```javascript
-import { router } from "@lukeshay/next-router";
+```
+npm i -D prettier @lukeshay/prettier-config
+```
 
-const wrapper = (req, res, handler) => handler({ req, res, wrapped: true });
+```
+pnpm i -D prettier @lukeshay/prettier-config
+```
 
-const get = (ctx) => ctx.res.json({ message: "Hello, World!" });
+```
+yarn add -D prettier @lukeshay/prettier-config
+```
 
-export default middleware(wrapper).get(get).handler();
+Create a file named `.prettierrc.cjs` with the following contents.
+
+```js
+module.exports = {
+  ...require("@lukeshay/prettier-config"),
+};
 ```
