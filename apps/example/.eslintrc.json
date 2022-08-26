@@ -1,3 +1,6 @@
 {
-  "extends": ["../../.eslintrc.cjs"]
+  "extends": ["../../.eslintrc.cjs"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }
