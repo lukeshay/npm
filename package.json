@@ -18,7 +18,7 @@
     "test": "lerna run test",
     "check": "npm run build && run-p lint test prettier",
     "prerelease": "npm run check",
-    "release": "lerna version --no-git-tag-version --no-push",
+    "release": "lerna version --no-git-tag-version --no-push && git checkout -b release && prettier --write --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .gitignore './**/*' && git add . && git commit -m 'chore: release' && git push --set-upstream origin release && git checkout main && git branch -D release",
     "prenpm": "npm run check",
     "npm": "lerna publish from-package",
     "bootstrap": "lerna bootstrap",
