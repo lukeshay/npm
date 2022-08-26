@@ -44,7 +44,7 @@ jobs:
             - run: npm run prettier:write || exit 0
             - run: git diff-index --quiet HEAD --
             - if: failure() && github.event_name == 'pull_request'
-              uses: EndBug/add-and-commit@v8
+              uses: EndBug/add-and-commit@v9
               with:
                   author_name: "GitHub Actions"
                   author_email: "actions@github.com"
