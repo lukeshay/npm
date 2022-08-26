@@ -12,7 +12,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                cmd: ["test", "lint", "prettier:check"]
+                cmd: ["test", "lint", "prettier"]
         name: ${{ matrix.node-version }} - ${{ matrix.cmd }}
         steps:
             - uses: actions/checkout@v2
