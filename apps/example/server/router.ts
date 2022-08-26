@@ -1,5 +1,5 @@
-import { router } from "@lukeshay/next-router";
-import type { Router } from "@lukeshay/next-router";
+import { router } from "@lshay/next-router";
+import type { Router } from "@lshay/next-router";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export type Handler = (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void;

@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@lukeshay/eslint-config"],
+  extends: ["@lshay/eslint-config"],
   overrides: [
     {
       files: ["test/**/*"],

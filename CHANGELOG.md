@@ -7,7 +7,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **@lukeshay/prettier-config:** Added merge functionality to prettier config ([#52](https://github.com/LukeShay/npm/issues/52)) ([f0b9add](https://github.com/LukeShay/npm/commit/f0b9add6e3a5f5e294994012b986eaa6fff2c586))
+- **@lshay/prettier-config:** Added merge functionality to prettier config ([#52](https://github.com/LukeShay/npm/issues/52)) ([f0b9add](https://github.com/LukeShay/npm/commit/f0b9add6e3a5f5e294994012b986eaa6fff2c586))
 - **deps:** update dependency @mantine/hooks to v3.6.7 ([#33](https://github.com/LukeShay/npm/issues/33)) ([32e307d](https://github.com/LukeShay/npm/commit/32e307d6ab0e46b77fc0e40f5d4a72f812910a91))
 - **deps:** update dependency @mantine/next to v3.6.7 ([#34](https://github.com/LukeShay/npm/issues/34)) ([a66df84](https://github.com/LukeShay/npm/commit/a66df84ecb372b3c948549baebda61109c98f5e3))
 
@@ -15,7 +15,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **@lukeshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))
+- **@lshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))
 
 ## [0.3.4](https://github.com/LukeShay/npm/compare/v0.3.3...v0.3.4) (2022-01-24)
 
@@ -43,16 +43,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **@lukeshay/next-middleware:** create a basic middleware/router class for Next.js ([6a706fc](https://github.com/LukeShay/npm/commit/6a706fcbd47a36a36fea46d4889e0f0dbdff800f))
+- **@lshay/next-middleware:** create a basic middleware/router class for Next.js ([6a706fc](https://github.com/LukeShay/npm/commit/6a706fcbd47a36a36fea46d4889e0f0dbdff800f))
 
 # [0.2.0](https://github.com/LukeShay/npm/compare/v0.1.0...v0.2.0) (2021-07-30)
 
 ### Features
 
-- **@lukeshay/logger:** created custom and vercel configurations ([4063e2e](https://github.com/LukeShay/npm/commit/4063e2e9e65d675f7db56d309f90118957f57a1d))
+- **@lshay/logger:** created custom and vercel configurations ([4063e2e](https://github.com/LukeShay/npm/commit/4063e2e9e65d675f7db56d309f90118957f57a1d))
 
 # 0.1.0 (2021-07-27)
 
 ### Features
 
-- **@lukeshay/next-ga:** created functions and component for Google Analytics ([b8e028b](https://github.com/LukeShay/npm/commit/b8e028b25e54dbcfd4e14f3ac6bb196d327d73ff))
+- **@lshay/next-ga:** created functions and component for Google Analytics ([b8e028b](https://github.com/LukeShay/npm/commit/b8e028b25e54dbcfd4e14f3ac6bb196d327d73ff))

@@ -7,7 +7,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **@lukeshay/eslint-config:** Created an eslint config base off of eslint-config-get-off-my-lawn ([#58](https://github.com/LukeShay/npm/issues/58)) ([2d65f22](https://github.com/LukeShay/npm/commit/2d65f22066a7a3bed2cef463a956de5e840e0273))
+- **@lshay/eslint-config:** Created an eslint config base off of eslint-config-get-off-my-lawn ([#58](https://github.com/LukeShay/npm/issues/58)) ([2d65f22](https://github.com/LukeShay/npm/commit/2d65f22066a7a3bed2cef463a956de5e840e0273))
 
 ## 0.4.1 (2022-08-23)
 
@@ -20,7 +20,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **@lukeshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))
+- **@lshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))
 
 ## [0.4.1](https://github.com/LukeShay/npm/compare/v0.4.0...v0.4.1) (2022-08-23)
 
@@ -33,4 +33,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **@lukeshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))
+- **@lshay/next-router:** require wrapper and allow for any handler type ([#3](https://github.com/LukeShay/npm/issues/3)) ([f230767](https://github.com/LukeShay/npm/commit/f2307674df375539897712d5b83df144a5c0fe06))

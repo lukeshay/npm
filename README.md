@@ -1,4 +1,4 @@
-# @lukeshay packages
+# @lshay packages
 
 This repo contains various NPM packages that I use. I started building this because I noticed a lot of things that I would repeat in all of my projects. I am not really building this for other people to use but feel free to use them and submit pull requests!
 

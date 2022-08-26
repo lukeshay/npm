@@ -31,10 +31,10 @@
     ]
   },
   "dependencies": {
-    "@lukeshay/eslint-config": "file:packages/lukeshay-eslint-config",
-    "@lukeshay/next-ga": "file:packages/lukeshay-next-ga",
-    "@lukeshay/next-router": "file:packages/lukeshay-next-router",
-    "@lukeshay/prettier-config": "file:packages/lukeshay-prettier-config"
+    "@lshay/eslint-config": "file:packages/lshay-eslint-config",
+    "@lshay/next-ga": "file:packages/lshay-next-ga",
+    "@lshay/next-router": "file:packages/lshay-next-router",
+    "@lshay/prettier-config": "file:packages/lshay-prettier-config"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",

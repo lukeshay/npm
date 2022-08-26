@@ -1,4 +1,4 @@
-# @lukeshay/eslint-config
+# @lshay/eslint-config
 
 The eslint config I use on my projects. This is based off of [eslint-config-get-off-my-lawn](https://www.npmjs.com/package/eslint-config-get-off-my-lawn).
 
@@ -7,21 +7,21 @@ The eslint config I use on my projects. This is based off of [eslint-config-get-
 Install using the package manager of your choice.
 
 ```
-npm i -D eslint @lukeshay/eslint-config
+npm i -D eslint @lshay/eslint-config
 ```
 
 ```
-pnpm i -D eslint @lukeshay/eslint-config
+pnpm i -D eslint @lshay/eslint-config
 ```
 
 ```
-yarn add -D eslint @lukeshay/eslint-config
+yarn add -D eslint @lshay/eslint-config
 ```
 
 Create a file named `.eslintrc.cjs` with the following contents.
 
 ```js
 module.exports = {
-  extends: ["@lukeshay/eslint-config"],
+  extends: ["@lshay/eslint-config"],
 };
 ```

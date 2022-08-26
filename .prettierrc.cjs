@@ -1,1 +1,1 @@
-module.exports = require("@lukeshay/prettier-config");
+module.exports = require("@lshay/prettier-config");

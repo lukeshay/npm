@@ -1,4 +1,4 @@
-# @lukeshay/prettier-config
+# @lshay/prettier-config
 
 The prettier config I use on my projects.
 
@@ -7,21 +7,21 @@ The prettier config I use on my projects.
 Install using the package manager of your choice.
 
 ```
-npm i -D prettier @lukeshay/prettier-config
+npm i -D prettier @lshay/prettier-config
 ```
 
 ```
-pnpm i -D prettier @lukeshay/prettier-config
+pnpm i -D prettier @lshay/prettier-config
 ```
 
 ```
-yarn add -D prettier @lukeshay/prettier-config
+yarn add -D prettier @lshay/prettier-config
 ```
 
 Create a file named `.prettierrc.cjs` with the following contents.
 
 ```js
 module.exports = {
-  ...require("@lukeshay/prettier-config"),
+  ...require("@lshay/prettier-config"),
 };
 ```

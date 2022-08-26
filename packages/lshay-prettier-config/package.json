@@ -1,5 +1,5 @@
 {
-  "name": "@lukeshay/prettier-config",
+  "name": "@lshay/prettier-config",
   "version": "0.5.0",
   "license": "MIT",
   "author": "Luke Shay <https://lukeshay.com>",
@@ -40,5 +40,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "431bfff815bda7548f4caace121d910b094c7c32"
 }
