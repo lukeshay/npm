@@ -1,45 +1,45 @@
 {
-  "name": "@lshay/prettier-config",
-  "version": "0.5.0",
-  "license": "MIT",
-  "author": "Luke Shay <https://lukeshay.com>",
-  "type": "commonjs",
-  "main": "./index.cjs",
-  "files": [
-    "index.cjs",
-    "merge.cjs",
-    "README.md",
-    "CHANGELOG.md"
-  ],
-  "scripts": {
-    "build": "exit 0",
-    "clean": "exit 0",
-    "lint": "../../scripts/lint.sh",
-    "lint:fix": "npm run lint -- --fix",
-    "prepack": "exit 0",
-    "test": "exit 0",
-    "watch": "exit 0"
-  },
-  "prettier": "../../.prettierrc.cjs",
-  "jest": {
-    "preset": "../../jest.config.cjs"
-  },
-  "dependencies": {
-    "merge-anything": "^5.0.2",
-    "prettier-plugin-packagejson": "^2.2.18",
-    "prettier-plugin-tailwindcss": "^0.1.13"
-  },
-  "devDependencies": {
-    "prettier": "^2.7.1"
-  },
-  "peerDependencies": {
-    "prettier": "2.x"
-  },
-  "engines": {
-    "node": "16.x"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "431bfff815bda7548f4caace121d910b094c7c32"
+	"name": "@lshay/prettier-config",
+	"version": "0.5.0",
+	"license": "MIT",
+	"author": "Luke Shay <https://lukeshay.com>",
+	"type": "commonjs",
+	"main": "./index.cjs",
+	"files": [
+		"index.cjs",
+		"merge.cjs",
+		"README.md",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"build": "exit 0",
+		"clean": "exit 0",
+		"lint": "../../scripts/lint.sh",
+		"lint:fix": "npm run lint -- --fix",
+		"prepack": "exit 0",
+		"test": "exit 0",
+		"watch": "exit 0"
+	},
+	"prettier": "../../.prettierrc.cjs",
+	"jest": {
+		"preset": "../../jest.config.cjs"
+	},
+	"dependencies": {
+		"merge-anything": "^5.0.2",
+		"prettier-plugin-packagejson": "^2.2.18",
+		"prettier-plugin-tailwindcss": "^0.1.13"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	},
+	"peerDependencies": {
+		"prettier": "2.x"
+	},
+	"engines": {
+		"node": "16.x"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"gitHead": "431bfff815bda7548f4caace121d910b094c7c32"
 }

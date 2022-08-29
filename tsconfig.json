@@ -1,11 +1,11 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
-  "compilerOptions": {
-    "declaration": false,
-    "jsx": "react",
-    "lib": ["dom", "esnext"],
-    "module": "ES6",
-    "moduleResolution": "node",
-    "strict": true
-  }
+	"extends": "@tsconfig/node16/tsconfig.json",
+	"compilerOptions": {
+		"declaration": false,
+		"jsx": "react",
+		"lib": ["dom", "esnext"],
+		"module": "ES6",
+		"moduleResolution": "node",
+		"strict": true
+	}
 }

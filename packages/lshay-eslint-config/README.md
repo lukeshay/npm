@@ -22,6 +22,6 @@ Create a file named `.eslintrc.cjs` with the following contents.
 
 ```js
 module.exports = {
-  extends: ["@lshay/eslint-config"],
+	extends: ["@lshay/eslint-config"],
 };
 ```
