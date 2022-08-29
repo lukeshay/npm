@@ -4,5 +4,5 @@ import { createGetInitialProps } from "@mantine/next";
 const getInitialProps = createGetInitialProps();
 
 export default class _Document extends Document {
-  public static getInitialProps = getInitialProps;
+	public static getInitialProps = getInitialProps;
 }
