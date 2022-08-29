@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.1 (2022-08-29)
+
+### Bug Fixes
+
+- **@lshay/prettier-config:** Set `useTabs` to true ([#63](https://github.com/LukeShay/npm/issues/63)) ([2f9b89f](https://github.com/LukeShay/npm/commit/2f9b89fbff8c5b535d77358744843b804fd938eb))
+
 # 0.5.0 (2022-08-26)
 
 ### Features
