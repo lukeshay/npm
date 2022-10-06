@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { StatusCodes } from "http-status-codes";
+import { describe, test, expect, beforeEach, vi } from "vitest";
 
 import type { HttpMethod } from "../src/enums/http-methods";
 import { HttpMethods } from "../src/enums/http-methods";
@@ -21,9 +22,9 @@ const handlerArgs = (method: HttpMethod): [NextApiRequest, NextApiResponse] => [
 		method,
 	} as unknown as NextApiRequest,
 	{
-		end: jest.fn().mockReturnThis(),
-		json: jest.fn().mockReturnThis(),
-		status: jest.fn().mockReturnThis(),
+		end: vi.fn().mockReturnThis(),
+		json: vi.fn().mockReturnThis(),
+		status: vi.fn().mockReturnThis(),
 	} as unknown as NextApiResponse,
 ];
 
@@ -45,7 +46,7 @@ describe("wrapper", () => {
 
 	Object.values(HttpMethods).forEach((method) => {
 		test(`should handle ${method}`, async () => {
-			const handler = jest.fn();
+			const handler = vi.fn();
 
 			const [req, res] = handlerArgs(method);
 
@@ -65,7 +66,7 @@ describe("wrapper", () => {
 	});
 
 	test("should call notFound", async () => {
-		const handler = jest.fn();
+		const handler = vi.fn();
 
 		await baseRouter.notFound(handler).handler()(...handlerArgs(HttpMethods.TRACE));
 
@@ -73,7 +74,7 @@ describe("wrapper", () => {
 	});
 
 	test("should return early if there is no handler", async () => {
-		const wrapper = jest.fn();
+		const wrapper = vi.fn();
 
 		const [req, res] = handlerArgs(HttpMethods.TRACE);
 

@@ -1,6 +1,11 @@
 {
 	"name": "@lshay/next-ga",
 	"version": "0.5.1",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com/lukeshay/npm.git",
+		"directory": "packages/lshay-next-ga"
+	},
 	"license": "MIT",
 	"author": "Luke Shay <https://lukeshay.com>",
 	"exports": {
@@ -18,29 +23,25 @@
 	"scripts": {
 		"build": "../../scripts/build.sh",
 		"clean": "../../scripts/clean.sh",
-		"lint": "../../scripts/lint.sh",
-		"lint:fix": "npm run lint -- --fix",
-		"prepack": "npm run build",
-		"test": "../../scripts/test.sh",
-		"watch": "../../scripts/watch-web.sh"
+		"test": "exit 0"
 	},
 	"prettier": "../../.prettierrc.cjs",
-	"jest": {
-		"collectCoverage": false,
-		"preset": "../../jest.config.cjs"
-	},
 	"devDependencies": {
-		"prettier": "^2.7.1"
+		"@types/node": "^16",
+		"@types/react": "^18.0.21",
+		"eslint": "^8.24.0",
+		"next": "^12.3.1",
+		"prettier": "^2.7.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.8.4"
 	},
 	"peerDependencies": {
 		"next": "12.x",
-		"react": "18.x"
+		"react": "*"
 	},
 	"engines": {
-		"node": "16.x"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"gitHead": "431bfff815bda7548f4caace121d910b094c7c32"
+		"node": ">=14"
+	}
 }

@@ -1,11 +1,8 @@
 {
-	"extends": "@tsconfig/node16/tsconfig.json",
+	"extends": "./tsconfig.web.json",
 	"compilerOptions": {
-		"declaration": false,
-		"jsx": "react",
-		"lib": ["dom", "esnext"],
-		"module": "ES6",
-		"moduleResolution": "node",
-		"strict": true
+		"paths": {
+			"^@lshay/(.*)$": ["packages/lshay-$1/src/index.ts"]
+		}
 	}
 }

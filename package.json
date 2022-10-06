@@ -1,28 +1,22 @@
 {
 	"name": "root",
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com/lukeshay/npm.git",
+		"directory": "."
+	},
+	"license": "MIT",
 	"author": "Luke Shay <https://lukeshay.com>",
 	"workspaces": [
 		"packages/*",
 		"apps/*"
 	],
 	"scripts": {
-		"build": "lerna run build",
-		"prettier": "prettier --check --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .gitignore './**/*'",
-		"prettier:fix": "npm run prettier -- --write",
-		"prelint": "lerna run build",
-		"lint": "lerna run lint",
-		"lint:fix": "lerna run lint:fix",
-		"clean": "lerna run clean",
-		"new": "tsdx create",
-		"test": "lerna run test",
-		"check": "npm run build && run-p lint test prettier",
-		"prerelease": "npm run check",
-		"release": "lerna version --no-git-tag-version --no-push && git checkout -b release && prettier --write --ignore-unknown --no-error-on-unmatched-pattern --ignore-path .gitignore './**/*' && git add . && git commit -m 'chore: release' && git push --set-upstream origin release && git checkout main && git branch -D release",
-		"prenpm": "npm run check",
-		"npm": "lerna publish from-package",
-		"bootstrap": "lerna bootstrap",
-		"git-pre-commit": "lint-staged"
+		"lint": "eslint --ignore-path .gitignore .",
+		"lint:fix": "yarn lint --fix",
+		"prettier": "prettier --ignore-path .gitignore --ignore-unknown --no-error-on-unmatched-pattern --check .",
+		"prettier:fix": "yarn prettier --write"
 	},
 	"lint-staged": {
 		"*": [
@@ -31,32 +25,22 @@
 		]
 	},
 	"dependencies": {
-		"@lshay/eslint-config": "file:packages/lshay-eslint-config",
-		"@lshay/next-ga": "file:packages/lshay-next-ga",
-		"@lshay/next-router": "file:packages/lshay-next-router",
-		"@lshay/prettier-config": "file:packages/lshay-prettier-config"
+		"@changesets/changelog-github": "^0.4.7"
 	},
 	"devDependencies": {
-		"@tsconfig/node16": "^1.0.3",
-		"@types/chance": "^1.1.3",
-		"@types/jest": "^28.1.7",
-		"@types/react": "^18.0.17",
-		"@types/react-dom": "^18.0.6",
+		"@changesets/cli": "^2.25.0",
+		"@lshay/eslint-config": "workspace:^",
+		"@lshay/prettier-config": "workspace:^",
+		"@types/node": "^16",
 		"@vercel/git-hooks": "^1.0.0",
-		"chance": "^1.1.8",
-		"eslint": "^8.22.0",
-		"lerna": "^4.0.0",
+		"eslint": "^8.24.0",
 		"lint-staged": "^13.0.3",
-		"next": "^12.2.5",
-		"npm-run-all": "^4.1.5",
 		"prettier": "^2.7.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
 		"rimraf": "^3.0.2",
-		"tslib": "^2.4.0",
-		"typescript": "^4.7.4"
+		"typescript": "^4.8.4"
 	},
+	"packageManager": "yarn@3.2.4",
 	"engines": {
-		"node": "16.x"
+		"node": ">=14"
 	}
 }

@@ -10,5 +10,5 @@ rimrafArgs+=("dist" ".jest-*")
 rimrafArgs+=($@)
 
 # Execute
-npm exec -- rimraf "${rimrafArgs[@]}"
+yarn rimraf "${rimrafArgs[@]}"
 

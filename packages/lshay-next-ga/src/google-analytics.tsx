@@ -9,7 +9,6 @@ export const GoogleAnalytics: FC<never> = () => (
 	<>
 		<script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID ?? ""}`} />
 		<script
-			// eslint-disable-next-line react/no-danger
 			dangerouslySetInnerHTML={{
 				__html: `
                 window.dataLayer = window.dataLayer || [];

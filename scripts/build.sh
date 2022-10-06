@@ -11,10 +11,10 @@ tscArgs+=("-p" "./tsconfig.build.json")
 tscArgs+=($@)
 
 # Execute
-npm exec -- rimraf dist
+yarn rimraf dist
 
-npm exec -- tsc --module es6 --outDir ./dist/module "${tscArgs[@]}"
-npm exec -- tsc --module commonjs --outDir ./dist/main "${tscArgs[@]}"
+yarn tsc --module es6 --outDir ./dist/module "${tscArgs[@]}"
+yarn tsc --module commonjs --outDir ./dist/main "${tscArgs[@]}"
 
-npm exec -- tsc --declaration --outDir ./dist/types "${tscArgs[@]}"
+yarn tsc --declaration --outDir ./dist/types "${tscArgs[@]}"
 
