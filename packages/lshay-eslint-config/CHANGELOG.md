@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- 86dda5d: Update allowed node versions to 14.x || 16.x
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/eslint-config",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
