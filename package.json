@@ -33,7 +33,7 @@
 		"@lshay/prettier-config": "workspace:^",
 		"@types/node": "^16",
 		"@vercel/git-hooks": "^1.0.0",
-		"eslint": "^8.24.0",
+		"eslint": "^8.26.0",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
@@ -41,7 +41,7 @@
 	},
 	"packageManager": "yarn@3.2.4",
 	"engines": {
-		"node": ">=14"
+		"node": "14.x || 16.x"
 	},
 	"publishConfig": {
 		"access": "public"

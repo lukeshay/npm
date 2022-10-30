@@ -17,4 +17,3 @@ yarn tsc --module es6 --outDir ./dist/module "${tscArgs[@]}"
 yarn tsc --module commonjs --outDir ./dist/main "${tscArgs[@]}"
 
 yarn tsc --declaration --outDir ./dist/types "${tscArgs[@]}"
-

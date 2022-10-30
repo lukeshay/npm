@@ -11,4 +11,3 @@ vitestArgs+=($@)
 
 # Execute
 yarn vitest "${vitestArgs[@]}"
-

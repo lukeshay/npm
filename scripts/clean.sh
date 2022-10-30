@@ -11,4 +11,3 @@ rimrafArgs+=($@)
 
 # Execute
 yarn rimraf "${rimrafArgs[@]}"
-
