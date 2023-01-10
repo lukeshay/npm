@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.2
+
+### Patch Changes
+
+- Upgraded dependencies
+- Updated dependencies
+  - @lshay/next-router@0.5.3
+
 ## 0.6.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/prettier-config",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
@@ -23,20 +23,20 @@
 	},
 	"prettier": "../../.prettierrc.cjs",
 	"dependencies": {
-		"merge-anything": "^5.0.4",
-		"prettier-plugin-astro": "^0.7.0",
+		"merge-anything": "^5.1.4",
+		"prettier-plugin-astro": "^0.7.2",
 		"prettier-plugin-jsdoc": "^0.4.2",
 		"prettier-plugin-packagejson": "^2.3.0",
 		"prettier-plugin-sh": "^0.12.8",
-		"prettier-plugin-sort-json": "^0.0.3",
-		"prettier-plugin-tailwindcss": "^0.1.13"
+		"prettier-plugin-sort-json": "^1.0.0",
+		"prettier-plugin-tailwindcss": "^0.2.1"
 	},
 	"devDependencies": {
-		"@types/node": "^16",
-		"eslint": "^8.26.0",
-		"prettier": "^2.7.1",
+		"@types/node": "^18",
+		"eslint": "^8.31.0",
+		"prettier": "^2.8.2",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.8.4"
+		"typescript": "^4.9.4"
 	},
 	"peerDependencies": {
 		"prettier": "2.x"
