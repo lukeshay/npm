@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/eslint-config",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
@@ -26,16 +26,16 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18",
-		"eslint": "^8.31.0",
-		"prettier": "^2.8.2",
-		"rimraf": "^3.0.2",
-		"typescript": "^4.9.4"
+		"eslint": "^8.35.0",
+		"prettier": "^2.8.4",
+		"rimraf": "^4.3.1",
+		"typescript": "^4.9.5"
 	},
 	"peerDependencies": {
 		"eslint": "8.x"
 	},
 	"engines": {
-		"node": "14.x || 16.x"
+		"node": "16.x || 18.x"
 	},
 	"publishConfig": {
 		"access": "public"

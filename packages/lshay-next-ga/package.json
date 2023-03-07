@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/next-ga",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
@@ -28,21 +28,21 @@
 	"prettier": "../../.prettierrc.cjs",
 	"devDependencies": {
 		"@types/node": "^18",
-		"@types/react": "^18.0.26",
-		"eslint": "^8.31.0",
-		"next": "^13.1.1",
-		"prettier": "^2.8.2",
+		"@types/react": "^18.0.28",
+		"eslint": "^8.35.0",
+		"next": "^13.2.3",
+		"prettier": "^2.8.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"rimraf": "^3.0.2",
-		"typescript": "^4.9.4"
+		"rimraf": "^4.3.1",
+		"typescript": "^4.9.5"
 	},
 	"peerDependencies": {
 		"next": "12.x",
 		"react": "*"
 	},
 	"engines": {
-		"node": "14.x || 16.x"
+		"node": "16.x || 18.x"
 	},
 	"publishConfig": {
 		"access": "public"
