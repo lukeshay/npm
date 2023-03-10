@@ -9,8 +9,7 @@
 	"license": "MIT",
 	"author": "Luke Shay <https://lukeshay.com>",
 	"workspaces": [
-		"packages/*",
-		"apps/*"
+		"packages/*"
 	],
 	"scripts": {
 		"lint": "eslint --ignore-path .gitignore .",
