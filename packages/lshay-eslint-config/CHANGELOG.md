@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- 975e343: Upgraded typescript, import, and next plugins
+
 ## 0.2.3
 
 ### Patch Changes
