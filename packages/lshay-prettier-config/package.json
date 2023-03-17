@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/prettier-config",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",

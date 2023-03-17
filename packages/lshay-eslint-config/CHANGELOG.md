@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- ce50320: Upgraded dependencies
+
 ## 0.2.4
 
 ### Patch Changes
