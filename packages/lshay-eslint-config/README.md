@@ -1,6 +1,6 @@
 # @lshay/eslint-config
 
-The eslint config I use on my projects. This is based off of [eslint-config-get-off-my-lawn](https://www.npmjs.com/package/eslint-config-get-off-my-lawn).
+The eslint config I use on my projects. Automatically adds TypeScript, React, and Vitest rules if they are install.
 
 ## Getting Started
 
@@ -23,5 +23,9 @@ Create a file named `.eslintrc.cjs` with the following contents.
 ```js
 module.exports = {
 	extends: ["@lshay/eslint-config"],
+	parserOptions: {
+		project: ["./tsconfig.json"],
+		tsconfigRootDir: __dirname,
+	},
 };
 ```
