@@ -1,7 +1,9 @@
 const disabledByPrettier = require("./disabled-by-prettier");
 const { packageJson } = require("./utils");
 
-module.exports = {
+const sourceType = packageJson.type ?? "commonjs";
+
+const config = {
 	extends: [
 		"eslint:recommended",
 		"plugin:import/recommended",
@@ -10,7 +12,7 @@ module.exports = {
 		"plugin:security/recommended",
 		"plugin:perfectionist/recommended-natural",
 		"plugin:regexp/recommended",
-		"plugin:sonar/recommended",
+		"plugin:sonarjs/recommended",
 		"plugin:jsdoc/recommended-typescript-flavor-error",
 	],
 	overrides: [
@@ -35,12 +37,18 @@ module.exports = {
 	],
 	parserOptions: {
 		ecmaVersion: "latest",
-		sourceType: packageJson.type ?? "commonjs",
+		sourceType,
 	},
 	plugins: ["fp", "@regru/prefer-early-return"],
 	rules: {
+		"@regru/prefer-early-return/prefer-early-return": [
+			"warn",
+			{
+				maximumStatements: 1,
+			},
+		],
 		"fp/no-arguments": "error",
-		"fp/no-class": "error",
+		"fp/no-class": "off",
 		"fp/no-delete": "error",
 		"fp/no-events": "error",
 		"fp/no-get-set": "error",
@@ -49,18 +57,12 @@ module.exports = {
 		"fp/no-mutating-assign": "error",
 		"fp/no-mutating-methods": "error",
 		"fp/no-mutation": ["error", { commonjs: true, exceptions: [] }],
-		"fp/no-proxy": "error",
-		"fp/no-this": "error",
-		"fp/no-valueof-field": "error",
 		"fp/no-nil": "off",
+		"fp/no-proxy": "error",
+		"fp/no-this": "off",
+		"fp/no-valueof-field": "error",
 		"import/no-named-as-default-member": "error",
-		"sonar/no-dead-store": "off",
-		"@regru/prefer-early-return/prefer-early-return": [
-			"warn",
-			{
-				maximumStatements: 1,
-			},
-		],
+		"sonarjs/no-collapsible-if": "off",
 		...disabledByPrettier,
 	},
 	settings: {
@@ -69,3 +71,10 @@ module.exports = {
 		},
 	},
 };
+
+if (sourceType === "commonjs") {
+	// eslint-disable-next-line fp/no-mutation
+	config.rules["unicorn/prefer-module"] = "off";
+}
+
+module.exports = config;

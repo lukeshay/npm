@@ -4,8 +4,8 @@ module.exports = {
 	overrides: [
 		{
 			files: ["*.htm", "*.html"],
-			plugins: ["@html-eslint"],
 			parser: "@html-eslint/parser",
+			plugins: ["@html-eslint"],
 			rules: {
 				"@html-eslint/no-abstract-roles": "error",
 				"@html-eslint/no-accesskey-attrs": "error",

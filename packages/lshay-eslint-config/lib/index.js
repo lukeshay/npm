@@ -10,6 +10,7 @@ const vitest = require("./vitest");
 
 const overrides = [html];
 
+/* eslint-disable fp/no-mutating-methods */
 if (hasDependency("react")) {
 	log("Adding react overrides");
 
@@ -33,6 +34,7 @@ if (hasDependency("prettier")) {
 
 	overrides.push(prettier);
 }
+/* eslint-enable fp/no-mutating-methods */
 
 const config = mergeAndConcat(base, ...overrides);
 

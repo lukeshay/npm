@@ -35,8 +35,7 @@
 		"@types/node": "^18",
 		"eslint": "^8.36.0",
 		"prettier": "^2.8.4",
-		"rimraf": "^4.4.0",
-		"typescript": "^5.0.2"
+		"rimraf": "^4.4.0"
 	},
 	"peerDependencies": {
 		"prettier": "2.x"

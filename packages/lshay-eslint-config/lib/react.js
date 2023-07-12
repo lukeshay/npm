@@ -3,7 +3,6 @@ const { supportedFileTypes } = require("./utils");
 module.exports = {
 	overrides: [
 		{
-			files: [supportedFileTypes],
 			env: {
 				browser: true,
 			},
@@ -15,13 +14,13 @@ module.exports = {
 				"plugin:ssr-friendly/recommended",
 				"plugin:react-perf/recommended",
 			],
+			files: [supportedFileTypes],
 			plugins: ["sonar", "validate-jsx-nesting", "react-refresh"],
 			rules: {
 				"jsx-a11y/alt-text": ["error", { img: ["Image", "Img"] }],
 				"jsx-a11y/lang": "error",
 				"jsx-a11y/no-aria-hidden-on-focusable": "error",
 				"jsx-a11y/prefer-tag-over-role": "error",
-				"react-hooks/exhaustive-deps": "error",
 				"react/boolean-prop-naming": [
 					"error",
 					{
@@ -39,10 +38,11 @@ module.exports = {
 				"react/no-danger": "error",
 				"react/no-unsafe": ["error", { checkAliases: true }],
 				"react/self-closing-comp": "error",
+				"react-hooks/exhaustive-deps": "error",
+				"react-refresh/only-export-components": ["error", { allowConstantExport: true, checkJS: true }],
 				"sonar/no-hook-setter-in-body": "error",
 				"sonar/no-useless-react-setstate": "error",
 				"validate-jsx-nesting/no-invalid-jsx-nesting": "error",
-				"react-refresh/only-export-components": ["error", { allowConstantExport: true, checkJS: true }],
 			},
 		},
 	],
