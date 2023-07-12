@@ -21,11 +21,20 @@ yarn add -D eslint @lshay/eslint-config
 Create a file named `.eslintrc.cjs` with the following contents.
 
 ```js
-module.exports = {
-	extends: ["@lshay/eslint-config"],
-	parserOptions: {
-		project: ["./tsconfig.json"],
-		tsconfigRootDir: __dirname,
+const { createConfig } = require("@lshay/eslint-config");
+
+module.exports = createConfig(
+	{
+		typescript: true,
+		prettier: true,
+		node: true,
 	},
-};
+	{
+		extends: ["@lshay/eslint-config"],
+		parserOptions: {
+			project: ["./tsconfig.json"],
+			tsconfigRootDir: __dirname,
+		},
+	},
+);
 ```
