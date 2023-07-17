@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- 0aa3b11: Updated to a function
+- 290c96d: No longer use eslint-config-get-off-my-lawn
+
+### Patch Changes
+
+- acf607a: Adjusted the rules
+
 ## 0.2.5
 
 ### Patch Changes
