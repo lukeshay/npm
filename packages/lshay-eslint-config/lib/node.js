@@ -15,11 +15,11 @@ const node = (options) => {
 	return {
 		overrides: [
 			{
-				files: options.node.files ?? [supportedFileTypes],
-				extends: ["plugin:n/recommended"],
 				env: {
 					node: true,
 				},
+				extends: ["plugin:n/recommended"],
+				files: options.node.files ?? [supportedFileTypes],
 				rules: {
 					"n/handle-callback-err": "error",
 					"n/no-extraneous-require": "off",
@@ -28,6 +28,7 @@ const node = (options) => {
 					"n/no-path-concat": "error",
 					"n/no-unpublished-import": "off",
 					"n/no-unpublished-require": "off",
+					...(options.prettier ? disabledByPrettier : {}),
 				},
 			},
 		],

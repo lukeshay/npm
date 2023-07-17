@@ -68,6 +68,8 @@ const base = (options) => {
 			"fp/no-this": "off",
 			"fp/no-valueof-field": "error",
 			"import/no-named-as-default-member": "error",
+			"no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+			"perfectionist/sort-union-types": "off",
 			"sonarjs/no-collapsible-if": "off",
 			...(options.prettier ? disabledByPrettier : {}),
 		},

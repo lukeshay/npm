@@ -42,29 +42,45 @@ const allTestDirectories = [
 	"**/test/**",
 	"**/tests/**",
 ];
-const allTestExtensions = ["*.test", "*.spec", "*.e2e"];
+const testExtensions = ["*.test", "*.spec", "*.e2e"];
 const allTsExtensions = ["ts", "tsx"];
-const allJsExtensions = ["js", "jsx", ...allTsExtensions];
+const allJsExtensions = ["js", "jsx"];
+const allExtensions = [...allJsExtensions, ...allTsExtensions];
 const allTsTestExtensions = allTsExtensions.flatMap((extension) =>
-	allTestExtensions.map((testExtension) => `${testExtension}.${extension}`),
+	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
 );
 const allJsTestExtensions = allJsExtensions.flatMap((extension) =>
-	allTestExtensions.map((testExtension) => `${testExtension}.${extension}`),
+	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
+);
+const allTestExtensions = allExtensions.flatMap((extension) =>
+	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
 );
 const supportedTsTestFileTypes = `**/*{${allTsTestExtensions.join(",")}}`;
-const supportedTestFileTypes = `**/*{${allJsTestExtensions.join(",")}}`;
+const supportedJsTestFileTypes = `**/*{${allJsTestExtensions.join(",")}}`;
+const supportedTestFileTypes = `**/*{${allTestExtensions.join(",")}}`;
 const supportedTsFileTypes = `**/*{${allTsExtensions.join(",")}}`;
-const supportedFileTypes = `**/*{${allJsExtensions.join(",")}}`;
+const supportedJsFileTypes = `**/*{${allJsExtensions.join(",")}}`;
+const supportedFileTypes = `**/*{${allExtensions.join(",")}}`;
+
+/**
+ * @param {import(".").Options} options - The options
+ * @returns {string} The source type
+ */
+exports.getSourceType = (options) => options.sourceType ?? mergedPackageJson.type ?? "commonjs";
 
 exports.allTestDirectories = allTestDirectories;
 exports.allTestExtensions = allTestExtensions;
 exports.allTsExtensions = allTsExtensions;
 exports.allJsExtensions = allJsExtensions;
+exports.allExtensions = allExtensions;
 exports.allTsTestExtensions = allTsTestExtensions;
 exports.allJsTestExtensions = allJsTestExtensions;
+exports.allTestExtensions = allTestExtensions;
 exports.supportedTsTestFileTypes = supportedTsTestFileTypes;
+exports.supportedJsTestFileTypes = supportedJsTestFileTypes;
 exports.supportedTestFileTypes = supportedTestFileTypes;
 exports.supportedTsFileTypes = supportedTsFileTypes;
+exports.supportedJsFileTypes = supportedJsFileTypes;
 exports.supportedFileTypes = supportedFileTypes;
 
 exports.packageJson = mergedPackageJson;
