@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.5.6
+
+### Patch Changes
+
+- 912d5e6: Added support for Prettier v3
+- 912d5e6: Added support for Node.js v20
+
 ## 0.5.5
 
 ### Patch Changes

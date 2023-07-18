@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.2
+
+### Patch Changes
+
+- 912d5e6: Added support for Node.js v20
+
 ## 0.3.1
 
 ### Patch Changes
