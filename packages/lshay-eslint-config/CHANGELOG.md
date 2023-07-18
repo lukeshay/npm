@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.3.1
+
+### Patch Changes
+
+- 69a77ca: Added deprecation plugin for TypeScript files
+- 69a77ca: Enabled more strict jsdoc rules
+
 ## 0.3.0
 
 ### Minor Changes
