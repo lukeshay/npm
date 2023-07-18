@@ -12,7 +12,6 @@ const { node } = require("./node");
 
 /**
  * @typedef RuleSet
- *
  * @typedef Options
  * @property {string[]} files - The files to apply the rules to.
  * @property {RuleSet | boolean | undefined} html - Whether to enable html linting.

@@ -12,9 +12,10 @@
 		"packages/*"
 	],
 	"scripts": {
+		"changeset": "CHANGESET=1 changeset",
 		"lint": "eslint --ignore-path .gitignore .",
 		"lint:fix": "yarn lint --fix",
-		"prettier": "prettier --ignore-path .gitignore --ignore-unknown --no-error-on-unmatched-pattern --check .",
+		"prettier": "prettier --check .",
 		"prettier:fix": "yarn prettier --write"
 	},
 	"lint-staged": {
@@ -27,15 +28,15 @@
 		"@changesets/changelog-github": "^0.4.8"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.26.0",
+		"@changesets/cli": "^2.26.2",
 		"@lshay/eslint-config": "workspace:^",
 		"@lshay/prettier-config": "workspace:^",
 		"@types/node": "^18",
 		"@vercel/git-hooks": "^1.0.0",
-		"eslint": "^8.36.0",
-		"lint-staged": "^13.2.0",
-		"prettier": "^2.8.4",
-		"rimraf": "^4.4.0"
+		"eslint": "^8.45.0",
+		"lint-staged": "^13.2.3",
+		"prettier": "^3.0.0",
+		"rimraf": "^5.0.1"
 	},
 	"packageManager": "yarn@3.6.1",
 	"engines": {
