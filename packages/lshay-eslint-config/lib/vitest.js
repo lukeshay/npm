@@ -1,8 +1,10 @@
 const { allTestDirectories, log, supportedTestFileTypes } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The Vitest ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const vitest = (options) => {
 	if (!options.vitest) {

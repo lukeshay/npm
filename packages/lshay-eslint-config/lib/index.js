@@ -12,24 +12,26 @@ const { node } = require("./node");
 
 /**
  * @typedef RuleSet
- * @property {string[]} files - The files to apply the rules to
- *
  * @typedef Options
- * @property {RuleSet | boolean | undefined} html - Whether to enable html linting
- * @property {RuleSet | boolean | undefined} node - Whether to enable node linting
- * @property {RuleSet | boolean | undefined} prettier - Whether to disable rules that interfere with prettier
- * @property {RuleSet | boolean | undefined} react - Whether to enable react linting
- * @property {RuleSet | boolean | undefined} reactNative - Whether to enable react-native linting
- * @property {RuleSet | boolean | undefined} typescript - Whether to enable typescript linting
- * @property {RuleSet | boolean | undefined} vitest - Whether to enable vitest linting
- * @property {string | undefined} ecmaVersion - The ecma version to use
- * @property {"commonjs" | "module" | undefined} sourceType - The source type to use
+ * @property {string[]} files - The files to apply the rules to.
+ * @property {RuleSet | boolean | undefined} html - Whether to enable html linting.
+ * @property {RuleSet | boolean | undefined} node - Whether to enable node linting.
+ * @property {RuleSet | boolean | undefined} prettier - Whether to disable rules that interfere with prettier.
+ * @property {RuleSet | boolean | undefined} react - Whether to enable react linting.
+ * @property {RuleSet | boolean | undefined} reactNative - Whether to enable react-native linting.
+ * @property {RuleSet | boolean | undefined} typescript - Whether to enable typescript linting.
+ * @property {RuleSet | boolean | undefined} vitest - Whether to enable vitest linting.
+ * @property {string | undefined} ecmaVersion - The ecma version to use.
+ * @property {"commonjs" | "module" | undefined} sourceType - The source type to use.
  */
 
 /**
- * @param {import(".").Options} options - The options to use when creating the config
- * @param {Record<string, any>[] | undefined} configs - The configs to merge with
- * @returns {Record<string, any>} The eslint config
+ * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
+ * additional configurations are added based on the options provided.
+ *
+ * @param {import(".").Options} options - The options to use when creating the config.
+ * @param {Record<string, any>[] | undefined} configs - The configs to merge with.
+ * @returns {Record<string, any>} The eslint config.
  */
 const createConfig = (options, ...configs) => {
 	const mergedConfig = mergeAndConcat(
@@ -49,8 +51,12 @@ const createConfig = (options, ...configs) => {
 };
 
 /**
- * @param {Record<string, any>[] | undefined} configs - The configs to merge with
- * @returns {Record<string, any>} The eslint config
+ * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
+ * additional configurations are added based on the options provided. This function will automatically detect which
+ * configurations to add based on the dependencies in the package.json file.
+ *
+ * @param {Record<string, any>[] | undefined} configs - The configs to merge with.
+ * @returns {Record<string, any>} The eslint config.
  */
 const createSmartConfig = (...configs) =>
 	createConfig(

@@ -2,8 +2,10 @@ const disabledByPrettier = require("./disabled-by-prettier");
 const { log } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The HTML ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const html = (options) => {
 	if (!options.html) {

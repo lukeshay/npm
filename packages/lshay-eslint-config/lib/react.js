@@ -2,8 +2,10 @@ const { mergeAndConcat } = require("merge-anything");
 const { log, supportedFileTypes } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The React ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const react = (options) => {
 	if (!options.react) {

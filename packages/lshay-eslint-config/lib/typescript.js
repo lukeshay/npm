@@ -24,8 +24,10 @@ const DISABLED_JS_RULES = {
 };
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The TypeScript ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const typescript = (options) => {
 	if (!options.typescript) {
@@ -80,7 +82,7 @@ const typescript = (options) => {
 					},
 				],
 				parser: "@typescript-eslint/parser",
-				plugins: ["total-functions", "etc", "tsdoc"],
+				plugins: ["total-functions", "etc", "tsdoc", "deprecation"],
 				rules: {
 					"@typescript-eslint/adjacent-overload-signatures": "off",
 					"@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
@@ -98,12 +100,18 @@ const typescript = (options) => {
 					"@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
 					"@typescript-eslint/prefer-readonly-parameter-types": "off",
 					"@typescript-eslint/strict-boolean-expressions": "off",
+					"deprecation/deprecation": "warn",
 					"etc/no-const-enum": "error",
 					"etc/no-enum": "error",
 					"etc/no-implicit-any-catch": "error",
 					"etc/no-misused-generics": "error",
 					"etc/no-t": "error",
 					"etc/prefer-interface": ["error", { allowIntersection: false }],
+					"jsdoc/no-types": "off",
+					"jsdoc/no-undefined-types": "off",
+					"jsdoc/require-param-type": "off",
+					"jsdoc/require-property-type": "off",
+					"jsdoc/require-returns-type": "off",
 					"no-unused-vars": "off",
 					"total-functions/no-unsafe-readonly-mutable-assignment": "off",
 					"tsdoc/syntax": "error",

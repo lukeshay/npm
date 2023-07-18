@@ -1,8 +1,10 @@
 const { log, supportedFileTypes } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The React Native ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const reactNative = (options) => {
 	if (!options.reactNative) {

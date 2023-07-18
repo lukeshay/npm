@@ -3,8 +3,10 @@ const disabledByPrettier = require("./disabled-by-prettier");
 const { packageJson } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The base ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const base = (options) => {
 	const sourceType = options.sourceType ?? packageJson.type ?? "commonjs";
@@ -19,7 +21,7 @@ const base = (options) => {
 			"plugin:perfectionist/recommended-natural",
 			"plugin:regexp/recommended",
 			"plugin:sonarjs/recommended",
-			"plugin:jsdoc/recommended-typescript-flavor-error",
+			"plugin:jsdoc/recommended-error",
 		],
 		overrides: [
 			{
@@ -68,6 +70,15 @@ const base = (options) => {
 			"fp/no-this": "off",
 			"fp/no-valueof-field": "error",
 			"import/no-named-as-default-member": "error",
+			"jsdoc/check-indentation": "error",
+			"jsdoc/check-line-alignment": "error",
+			"jsdoc/no-bad-blocks": "error",
+			"jsdoc/no-blank-block-descriptions": "error",
+			"jsdoc/no-blank-blocks": "error",
+			"jsdoc/require-description": "error",
+			"jsdoc/require-description-complete-sentence": "error",
+			"jsdoc/require-throws": "error",
+			"jsdoc/sort-tags": "error",
 			"no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
 			"perfectionist/sort-union-types": "off",
 			"sonarjs/no-collapsible-if": "off",

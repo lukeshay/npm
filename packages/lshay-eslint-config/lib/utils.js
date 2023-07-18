@@ -13,16 +13,20 @@ const packageJson = JSON.parse(readFileSync("./package.json", "utf8"));
 const mergedPackageJson = mergeAndConcat(DEFAULT_PACKAGE_JSON, packageJson);
 
 /**
- * @param {string} name - Name of the dependency
- * @returns {boolean} Whether the dependency is installed
+ * Checks if a dependency is listed in the package.json file.
+ *
+ * @param {string} name - Name of the dependency.
+ * @returns {boolean} Whether the dependency is installed.
  */
 const hasDependency = (name) => {
 	return Boolean(mergedPackageJson.dependencies[name]) || Boolean(mergedPackageJson.devDependencies[name]);
 };
 
 /**
- * @param {string} name - Name of the dependency
- * @returns {Semver | null | undefined} Version of the dependency
+ * Gets the version of a dependency.
+ *
+ * @param {string} name - Name of the dependency.
+ * @returns {import("semver").Semver | null | undefined} Version of the dependency.
  */
 const getVersion = (name) => parse(mergedPackageJson.dependencies[name] ?? mergedPackageJson.devDependencies[name]);
 
@@ -63,8 +67,10 @@ const supportedJsFileTypes = `**/*{${allJsExtensions.join(",")}}`;
 const supportedFileTypes = `**/*{${allExtensions.join(",")}}`;
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {string} The source type
+ * Gets the source type from the options or package.json file.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {string} The source type. @default "commonjs".
  */
 exports.getSourceType = (options) => options.sourceType ?? mergedPackageJson.type ?? "commonjs";
 

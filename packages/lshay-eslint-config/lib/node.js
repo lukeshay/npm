@@ -2,8 +2,10 @@ const disabledByPrettier = require("./disabled-by-prettier");
 const { log, supportedFileTypes } = require("./utils");
 
 /**
- * @param {import(".").Options} options - The options
- * @returns {Record<string, unknown>} The eslint config
+ * The Node.js ESLint configuration.
+ *
+ * @param {import(".").Options} options - The options.
+ * @returns {Record<string, unknown>} The eslint config.
  */
 const node = (options) => {
 	if (!options.node) {
