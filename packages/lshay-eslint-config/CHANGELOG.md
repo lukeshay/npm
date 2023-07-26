@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.3
+
+### Patch Changes
+
+- b17da67: Enable @typescript-eslint/explicit-module-boundary-types
+
 ## 0.3.2
 
 ### Patch Changes

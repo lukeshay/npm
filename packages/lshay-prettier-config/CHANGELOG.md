@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.0
+
+### Minor Changes
+
+- b17da67: Smaller print width and no semicolons
+
 ## 0.5.6
 
 ### Patch Changes
