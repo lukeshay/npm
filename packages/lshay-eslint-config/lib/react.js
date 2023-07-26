@@ -36,6 +36,7 @@ const react = (options) => {
 			"react/button-has-type": "error",
 			"react/hook-use-state": "error",
 			"react/jsx-boolean-value": "error",
+			"react/jsx-curly-brace-presence": ["error", "never"],
 			"react/jsx-fragments": "error",
 			"react/jsx-no-literals": "off",
 			"react/jsx-no-useless-fragment": "error",

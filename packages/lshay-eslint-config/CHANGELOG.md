@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.4
+
+### Patch Changes
+
+- Enable react/jsx-curly-brace-presence set to never
+
 ## 0.3.3
 
 ### Patch Changes
