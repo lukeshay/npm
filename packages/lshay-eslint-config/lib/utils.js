@@ -1,16 +1,16 @@
-const { readFileSync } = require("node:fs");
-const { mergeAndConcat } = require("merge-anything");
-const { parse } = require("semver");
+const { readFileSync } = require("node:fs")
+const { mergeAndConcat } = require("merge-anything")
+const { parse } = require("semver")
 
 const DEFAULT_PACKAGE_JSON = {
 	dependencies: {},
 	devDependencies: {},
 	type: "commonjs",
-};
+}
 
-const packageJson = JSON.parse(readFileSync("./package.json", "utf8"));
+const packageJson = JSON.parse(readFileSync("./package.json", "utf8"))
 
-const mergedPackageJson = mergeAndConcat(DEFAULT_PACKAGE_JSON, packageJson);
+const mergedPackageJson = mergeAndConcat(DEFAULT_PACKAGE_JSON, packageJson)
 
 /**
  * Checks if a dependency is listed in the package.json file.
@@ -19,8 +19,11 @@ const mergedPackageJson = mergeAndConcat(DEFAULT_PACKAGE_JSON, packageJson);
  * @returns {boolean} Whether the dependency is installed.
  */
 const hasDependency = (name) => {
-	return Boolean(mergedPackageJson.dependencies[name]) || Boolean(mergedPackageJson.devDependencies[name]);
-};
+	return (
+		Boolean(mergedPackageJson.dependencies[name]) ||
+		Boolean(mergedPackageJson.devDependencies[name])
+	)
+}
 
 /**
  * Gets the version of a dependency.
@@ -28,9 +31,15 @@ const hasDependency = (name) => {
  * @param {string} name - Name of the dependency.
  * @returns {import("semver").Semver | null | undefined} Version of the dependency.
  */
-const getVersion = (name) => parse(mergedPackageJson.dependencies[name] ?? mergedPackageJson.devDependencies[name]);
+const getVersion = (name) =>
+	parse(
+		mergedPackageJson.dependencies[name] ??
+			mergedPackageJson.devDependencies[name],
+	)
 
-const log = (...arguments_) => Boolean(process.env.DEBUG) && console.log("@lshay/eslint-config:", ...arguments_);
+const log = (...arguments_) =>
+	Boolean(process.env.DEBUG) &&
+	console.log("@lshay/eslint-config:", ...arguments_)
 
 const allTestDirectories = [
 	"**/__e2e__/**",
@@ -45,26 +54,26 @@ const allTestDirectories = [
 	"**/specs/**",
 	"**/test/**",
 	"**/tests/**",
-];
-const testExtensions = ["*.test", "*.spec", "*.e2e"];
-const allTsExtensions = ["ts", "tsx"];
-const allJsExtensions = ["js", "jsx"];
-const allExtensions = [...allJsExtensions, ...allTsExtensions];
+]
+const testExtensions = ["*.test", "*.spec", "*.e2e"]
+const allTsExtensions = ["ts", "tsx"]
+const allJsExtensions = ["js", "jsx"]
+const allExtensions = [...allJsExtensions, ...allTsExtensions]
 const allTsTestExtensions = allTsExtensions.flatMap((extension) =>
 	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
-);
+)
 const allJsTestExtensions = allJsExtensions.flatMap((extension) =>
 	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
-);
+)
 const allTestExtensions = allExtensions.flatMap((extension) =>
 	testExtensions.map((testExtension) => `${testExtension}.${extension}`),
-);
-const supportedTsTestFileTypes = `**/*{${allTsTestExtensions.join(",")}}`;
-const supportedJsTestFileTypes = `**/*{${allJsTestExtensions.join(",")}}`;
-const supportedTestFileTypes = `**/*{${allTestExtensions.join(",")}}`;
-const supportedTsFileTypes = `**/*{${allTsExtensions.join(",")}}`;
-const supportedJsFileTypes = `**/*{${allJsExtensions.join(",")}}`;
-const supportedFileTypes = `**/*{${allExtensions.join(",")}}`;
+)
+const supportedTsTestFileTypes = `**/*{${allTsTestExtensions.join(",")}}`
+const supportedJsTestFileTypes = `**/*{${allJsTestExtensions.join(",")}}`
+const supportedTestFileTypes = `**/*{${allTestExtensions.join(",")}}`
+const supportedTsFileTypes = `**/*{${allTsExtensions.join(",")}}`
+const supportedJsFileTypes = `**/*{${allJsExtensions.join(",")}}`
+const supportedFileTypes = `**/*{${allExtensions.join(",")}}`
 
 /**
  * Gets the source type from the options or package.json file.
@@ -72,24 +81,25 @@ const supportedFileTypes = `**/*{${allExtensions.join(",")}}`;
  * @param {import(".").Options} options - The options.
  * @returns {string} The source type. @default "commonjs".
  */
-exports.getSourceType = (options) => options.sourceType ?? mergedPackageJson.type ?? "commonjs";
+exports.getSourceType = (options) =>
+	options.sourceType ?? mergedPackageJson.type ?? "commonjs"
 
-exports.allTestDirectories = allTestDirectories;
-exports.allTestExtensions = allTestExtensions;
-exports.allTsExtensions = allTsExtensions;
-exports.allJsExtensions = allJsExtensions;
-exports.allExtensions = allExtensions;
-exports.allTsTestExtensions = allTsTestExtensions;
-exports.allJsTestExtensions = allJsTestExtensions;
-exports.allTestExtensions = allTestExtensions;
-exports.supportedTsTestFileTypes = supportedTsTestFileTypes;
-exports.supportedJsTestFileTypes = supportedJsTestFileTypes;
-exports.supportedTestFileTypes = supportedTestFileTypes;
-exports.supportedTsFileTypes = supportedTsFileTypes;
-exports.supportedJsFileTypes = supportedJsFileTypes;
-exports.supportedFileTypes = supportedFileTypes;
+exports.allTestDirectories = allTestDirectories
+exports.allTestExtensions = allTestExtensions
+exports.allTsExtensions = allTsExtensions
+exports.allJsExtensions = allJsExtensions
+exports.allExtensions = allExtensions
+exports.allTsTestExtensions = allTsTestExtensions
+exports.allJsTestExtensions = allJsTestExtensions
+exports.allTestExtensions = allTestExtensions
+exports.supportedTsTestFileTypes = supportedTsTestFileTypes
+exports.supportedJsTestFileTypes = supportedJsTestFileTypes
+exports.supportedTestFileTypes = supportedTestFileTypes
+exports.supportedTsFileTypes = supportedTsFileTypes
+exports.supportedJsFileTypes = supportedJsFileTypes
+exports.supportedFileTypes = supportedFileTypes
 
-exports.packageJson = mergedPackageJson;
-exports.hasDependency = hasDependency;
-exports.getVersion = getVersion;
-exports.log = log;
+exports.packageJson = mergedPackageJson
+exports.hasDependency = hasDependency
+exports.getVersion = getVersion
+exports.log = log

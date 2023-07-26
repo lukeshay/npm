@@ -23,5 +23,5 @@ Create a file named `.prettierrc.cjs` with the following contents.
 ```js
 module.exports = {
 	...require("@lshay/prettier-config"),
-};
+}
 ```

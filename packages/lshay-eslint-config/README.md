@@ -21,7 +21,7 @@ yarn add -D eslint @lshay/eslint-config
 Create a file named `.eslintrc.cjs` with the following contents.
 
 ```js
-const { createConfig } = require("@lshay/eslint-config");
+const { createConfig } = require("@lshay/eslint-config")
 
 module.exports = createConfig(
 	{
@@ -36,5 +36,5 @@ module.exports = createConfig(
 			tsconfigRootDir: __dirname,
 		},
 	},
-);
+)
 ```

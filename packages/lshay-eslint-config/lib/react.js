@@ -1,5 +1,5 @@
-const { mergeAndConcat } = require("merge-anything");
-const { log, supportedFileTypes } = require("./utils");
+const { mergeAndConcat } = require("merge-anything")
+const { log, supportedFileTypes } = require("./utils")
 
 /**
  * The React ESLint configuration.
@@ -9,9 +9,9 @@ const { log, supportedFileTypes } = require("./utils");
  */
 const react = (options) => {
 	if (!options.react) {
-		log("Skipping react config");
+		log("Skipping react config")
 
-		return {};
+		return {}
 	}
 
 	const config = {
@@ -44,12 +44,15 @@ const react = (options) => {
 			"react/no-unsafe": ["error", { checkAliases: true }],
 			"react/self-closing-comp": "error",
 			"react-hooks/exhaustive-deps": "error",
-			"react-refresh/only-export-components": ["error", { allowConstantExport: true, checkJS: true }],
+			"react-refresh/only-export-components": [
+				"error",
+				{ allowConstantExport: true, checkJS: true },
+			],
 			"sonar/no-hook-setter-in-body": "error",
 			"sonar/no-useless-react-setstate": "error",
 			"validate-jsx-nesting/no-invalid-jsx-nesting": "error",
 		},
-	};
+	}
 
 	const reactNativeConfig = options.reactNative
 		? {}
@@ -61,7 +64,7 @@ const react = (options) => {
 					"jsx-a11y/no-aria-hidden-on-focusable": "error",
 					"jsx-a11y/prefer-tag-over-role": "error",
 				},
-		  };
+		  }
 
 	return {
 		overrides: [
@@ -70,7 +73,7 @@ const react = (options) => {
 				...mergeAndConcat(config, reactNativeConfig),
 			},
 		],
-	};
-};
+	}
+}
 
-exports.react = react;
+exports.react = react

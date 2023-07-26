@@ -1,6 +1,6 @@
-const { mergeAndConcat } = require("merge-anything");
-const disabledByPrettier = require("./disabled-by-prettier");
-const { packageJson } = require("./utils");
+const { mergeAndConcat } = require("merge-anything")
+const disabledByPrettier = require("./disabled-by-prettier")
+const { packageJson } = require("./utils")
 
 /**
  * The base ESLint configuration.
@@ -9,7 +9,7 @@ const { packageJson } = require("./utils");
  * @returns {Record<string, unknown>} The eslint config.
  */
 const base = (options) => {
-	const sourceType = options.sourceType ?? packageJson.type ?? "commonjs";
+	const sourceType = options.sourceType ?? packageJson.type ?? "commonjs"
 
 	const config = {
 		extends: [
@@ -89,7 +89,7 @@ const base = (options) => {
 				node: true,
 			},
 		},
-	};
+	}
 
 	const sourceTypeConfig =
 		sourceType === "module"
@@ -98,9 +98,9 @@ const base = (options) => {
 					rules: {
 						"unicorn/prefer-module": "off",
 					},
-			  };
+			  }
 
-	return mergeAndConcat(config, sourceTypeConfig);
-};
+	return mergeAndConcat(config, sourceTypeConfig)
+}
 
-exports.base = base;
+exports.base = base

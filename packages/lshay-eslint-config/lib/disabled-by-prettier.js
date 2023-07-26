@@ -88,6 +88,6 @@ const rules = [
 	"wrap-iife",
 	"wrap-regex",
 	"yield-star-spacing",
-];
+]
 
-module.exports = Object.fromEntries(rules.map((rule) => [rule, "off"]));
+module.exports = Object.fromEntries(rules.map((rule) => [rule, "off"]))

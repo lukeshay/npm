@@ -1,5 +1,5 @@
-const disabledByPrettier = require("./disabled-by-prettier");
-const { log } = require("./utils");
+const disabledByPrettier = require("./disabled-by-prettier")
+const { log } = require("./utils")
 
 /**
  * The HTML ESLint configuration.
@@ -9,9 +9,9 @@ const { log } = require("./utils");
  */
 const html = (options) => {
 	if (!options.html) {
-		log("Skipping HTML config");
+		log("Skipping HTML config")
 
-		return {};
+		return {}
 	}
 
 	return {
@@ -49,7 +49,7 @@ const html = (options) => {
 				},
 			},
 		],
-	};
-};
+	}
+}
 
-exports.html = html;
+exports.html = html

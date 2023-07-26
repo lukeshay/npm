@@ -1,14 +1,14 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
-const { mergeAndConcat } = require("merge-anything");
+require("@rushstack/eslint-patch/modern-module-resolution")
+const { mergeAndConcat } = require("merge-anything")
 
-const { base } = require("./base");
-const { typescript } = require("./typescript");
-const { react } = require("./react");
-const { reactNative } = require("./react-native");
-const { hasDependency, log } = require("./utils");
-const { html } = require("./html");
-const { vitest } = require("./vitest");
-const { node } = require("./node");
+const { base } = require("./base")
+const { typescript } = require("./typescript")
+const { react } = require("./react")
+const { reactNative } = require("./react-native")
+const { hasDependency, log } = require("./utils")
+const { html } = require("./html")
+const { vitest } = require("./vitest")
+const { node } = require("./node")
 
 /**
  * @typedef RuleSet
@@ -43,12 +43,12 @@ const createConfig = (options, ...configs) => {
 		html(options),
 		node(options),
 		...(configs ?? []),
-	);
+	)
 
-	log("Final config:", JSON.stringify(mergedConfig));
+	log("Final config:", JSON.stringify(mergedConfig))
 
-	return mergedConfig;
-};
+	return mergedConfig
+}
 
 /**
  * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
@@ -70,7 +70,7 @@ const createSmartConfig = (...configs) =>
 			vitest: hasDependency("vitest"),
 		},
 		...configs,
-	);
+	)
 
-exports.createConfig = createConfig;
-exports.createSmartConfig = createSmartConfig;
+exports.createConfig = createConfig
+exports.createSmartConfig = createSmartConfig

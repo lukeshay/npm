@@ -1,4 +1,4 @@
-const disabledByPrettier = require("./disabled-by-prettier");
+const disabledByPrettier = require("./disabled-by-prettier")
 const {
 	allExtensions,
 	allTestDirectories,
@@ -8,20 +8,20 @@ const {
 	supportedJsFileTypes,
 	supportedTestFileTypes,
 	supportedTsFileTypes,
-} = require("./utils");
+} = require("./utils")
 
 const DISABLED_CJS_RULES = {
 	"@typescript-eslint/no-require-imports": "off",
 	"@typescript-eslint/no-unsafe-assignment": "off",
 	"@typescript-eslint/no-var-requires": "off",
-};
+}
 
 const DISABLED_JS_RULES = {
 	"@typescript-eslint/no-unsafe-assignment": "off",
 	"@typescript-eslint/no-unsafe-call": "off",
 	"@typescript-eslint/no-unsafe-member-access": "off",
 	"@typescript-eslint/no-unsafe-return": "off",
-};
+}
 
 /**
  * The TypeScript ESLint configuration.
@@ -31,12 +31,12 @@ const DISABLED_JS_RULES = {
  */
 const typescript = (options) => {
 	if (!options.typescript) {
-		log("Skipping typescript config");
+		log("Skipping typescript config")
 
-		return {};
+		return {}
 	}
 
-	const sourceType = getSourceType(options);
+	const sourceType = getSourceType(options)
 
 	return {
 		overrides: [
@@ -57,7 +57,15 @@ const typescript = (options) => {
 							"@typescript-eslint/no-shadow": [
 								"error",
 								{
-									allow: ["defaultStatus", "event", "find", "length", "name", "status", "screen"],
+									allow: [
+										"defaultStatus",
+										"event",
+										"find",
+										"length",
+										"name",
+										"status",
+										"screen",
+									],
 									builtinGlobals: true,
 								},
 							],
@@ -85,19 +93,24 @@ const typescript = (options) => {
 				plugins: ["total-functions", "etc", "tsdoc", "deprecation"],
 				rules: {
 					"@typescript-eslint/adjacent-overload-signatures": "off",
-					"@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
+					"@typescript-eslint/consistent-type-exports": [
+						"error",
+						{ fixMixedExportsWithInlineTypeSpecifier: true },
+					],
 					"@typescript-eslint/consistent-type-imports": [
 						"error",
 						{ fixStyle: "inline-type-imports", prefer: "type-imports" },
 					],
 					"@typescript-eslint/explicit-function-return-type": "off",
-					"@typescript-eslint/explicit-module-boundary-types": "off",
 					"@typescript-eslint/init-declarations": "off",
 					"@typescript-eslint/member-ordering": "off",
 					"@typescript-eslint/naming-convention": "off",
 					"@typescript-eslint/no-restricted-imports": "off",
 					"@typescript-eslint/no-type-alias": "off",
-					"@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+					"@typescript-eslint/no-unused-vars": [
+						"error",
+						{ argsIgnorePattern: "^_" },
+					],
 					"@typescript-eslint/prefer-readonly-parameter-types": "off",
 					"@typescript-eslint/strict-boolean-expressions": "off",
 					"deprecation/deprecation": "warn",
@@ -130,7 +143,7 @@ const typescript = (options) => {
 				},
 			},
 		],
-	};
-};
+	}
+}
 
-exports.typescript = typescript;
+exports.typescript = typescript

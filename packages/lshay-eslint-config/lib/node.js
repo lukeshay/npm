@@ -1,5 +1,5 @@
-const disabledByPrettier = require("./disabled-by-prettier");
-const { log, supportedFileTypes } = require("./utils");
+const disabledByPrettier = require("./disabled-by-prettier")
+const { log, supportedFileTypes } = require("./utils")
 
 /**
  * The Node.js ESLint configuration.
@@ -9,9 +9,9 @@ const { log, supportedFileTypes } = require("./utils");
  */
 const node = (options) => {
 	if (!options.node) {
-		log("Skipping node config");
+		log("Skipping node config")
 
-		return {};
+		return {}
 	}
 
 	return {
@@ -34,7 +34,7 @@ const node = (options) => {
 				},
 			},
 		],
-	};
-};
+	}
+}
 
-exports.node = node;
+exports.node = node

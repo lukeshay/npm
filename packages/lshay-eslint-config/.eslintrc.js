@@ -3,4 +3,4 @@ module.exports = {
 		node: true,
 	},
 	extends: ["../../.eslintrc.cjs"],
-};
+}

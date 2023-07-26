@@ -1,4 +1,12 @@
 const config = {
+	arrowParens: "always",
+	bracketSameLine: false,
+	bracketSpacing: true,
+	embeddedLanguageFormatting: "auto",
+	endOfLine: "lf",
+	htmlWhitespaceSensitivity: "css",
+	insertPragma: false,
+	jsxSingleQuote: false,
 	overrides: [
 		{
 			files: ["**/.{yml,yaml}"],
@@ -27,9 +35,19 @@ const config = {
 		require.resolve("prettier-plugin-sh"),
 		require.resolve("prettier-plugin-jsdoc"),
 	],
-	printWidth: 120,
+	printWidth: 80,
+	proseWrap: "preserve",
+	quoteProps: "as-needed",
+	rangeEnd: Number.POSITIVE_INFINITY,
+	rangeStart: 0,
+	requirePragma: false,
+	semi: false,
+	singleAttributePerLine: false,
+	singleQuote: false,
+	tabWidth: 2,
 	trailingComma: "all",
 	useTabs: true,
-};
+	vueIndentScriptAndStyle: false,
+}
 
-module.exports = config;
+module.exports = config

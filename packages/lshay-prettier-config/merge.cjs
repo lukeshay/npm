@@ -1,5 +1,5 @@
-const { mergeAndConcat } = require("merge-anything");
+const { mergeAndConcat } = require("merge-anything")
 
-const config = require("./index.cjs");
+const config = require("./index.cjs")
 
-module.exports = (prettierConfig) => mergeAndConcat(config, prettierConfig);
+module.exports = (prettierConfig) => mergeAndConcat(config, prettierConfig)

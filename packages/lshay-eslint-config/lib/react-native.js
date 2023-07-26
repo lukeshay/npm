@@ -1,4 +1,4 @@
-const { log, supportedFileTypes } = require("./utils");
+const { log, supportedFileTypes } = require("./utils")
 
 /**
  * The React Native ESLint configuration.
@@ -8,9 +8,9 @@ const { log, supportedFileTypes } = require("./utils");
  */
 const reactNative = (options) => {
 	if (!options.reactNative) {
-		log("Skipping react-native config");
+		log("Skipping react-native config")
 
-		return {};
+		return {}
 	}
 
 	return {
@@ -32,7 +32,7 @@ const reactNative = (options) => {
 				},
 			},
 		],
-	};
-};
+	}
+}
 
-exports.reactNative = reactNative;
+exports.reactNative = reactNative

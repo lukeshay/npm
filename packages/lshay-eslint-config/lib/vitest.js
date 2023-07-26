@@ -1,4 +1,4 @@
-const { allTestDirectories, log, supportedTestFileTypes } = require("./utils");
+const { allTestDirectories, log, supportedTestFileTypes } = require("./utils")
 
 /**
  * The Vitest ESLint configuration.
@@ -8,20 +8,26 @@ const { allTestDirectories, log, supportedTestFileTypes } = require("./utils");
  */
 const vitest = (options) => {
 	if (!options.vitest) {
-		log("Skipping vitest config");
+		log("Skipping vitest config")
 
-		return {};
+		return {}
 	}
 
 	return {
 		overrides: [
 			{
 				extends: ["plugin:vitest/recommended"],
-				files: options.vitest.files ?? [...allTestDirectories, supportedTestFileTypes],
+				files: options.vitest.files ?? [
+					...allTestDirectories,
+					supportedTestFileTypes,
+				],
 				rules: {
 					"vitest/assertion-type": "error",
 					"vitest/consistent-test-filename": "error",
-					"vitest/consistent-test-it": ["error", { fn: "test", withinDescribe: "test" }],
+					"vitest/consistent-test-it": [
+						"error",
+						{ fn: "test", withinDescribe: "test" },
+					],
 					"vitest/max-nested-describe": ["error", { max: 1 }],
 					"vitest/no-alias-methods": "error",
 					"vitest/no-conditional-expect": "error",
@@ -58,7 +64,7 @@ const vitest = (options) => {
 				},
 			},
 		],
-	};
-};
+	}
+}
 
-exports.vitest = vitest;
+exports.vitest = vitest

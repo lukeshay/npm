@@ -1,3 +1,3 @@
-const { createSmartConfig } = require("@lshay/eslint-config");
+const { createSmartConfig } = require("@lshay/eslint-config")
 
-module.exports = createSmartConfig();
+module.exports = createSmartConfig()
