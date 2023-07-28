@@ -9,32 +9,39 @@
 	"license": "MIT",
 	"author": "Luke Shay <https://lukeshay.com>",
 	"type": "commonjs",
-	"main": "./index.cjs",
+	"main": "./index.js",
 	"files": [
-		"index.cjs",
-		"merge.cjs",
+		"index.js",
+		"merge.js",
 		"README.md",
 		"CHANGELOG.md"
 	],
 	"scripts": {
 		"build": "exit 0",
 		"clean": "exit 0",
-		"test": "exit 0"
+		"test": "exit 0",
+		"lint": "eslint .",
+		"lint:fix": "yarn lint --fix",
+		"prettier": "prettier --check .",
+		"prettier:fix": "yarn prettier --write"
 	},
-	"prettier": "../../.prettierrc.cjs",
+	"prettier": "../../.prettierrc.js",
 	"dependencies": {
 		"merge-anything": "^5.1.7",
 		"prettier-plugin-astro": "^0.11.0",
-		"prettier-plugin-jsdoc": "^0.4.2",
+		"prettier-plugin-jsdoc": "^1.0.1",
 		"prettier-plugin-packagejson": "^2.4.5",
 		"prettier-plugin-sh": "^0.13.1",
 		"prettier-plugin-sort-json": "^1.0.0",
 		"prettier-plugin-tailwindcss": "^0.4.1"
 	},
 	"devDependencies": {
+		"@lshay/eslint-config-flat": "workspace:^",
+		"@tsconfig/node18": "^18.2.0",
 		"eslint": "^8.45.0",
 		"prettier": "^3.0.0",
-		"rimraf": "^5.0.1"
+		"rimraf": "^5.0.1",
+		"typescript": "^5.1.6"
 	},
 	"peerDependencies": {
 		"prettier": "2.x || 3.x"

@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/check-tag-names */
 require("@rushstack/eslint-patch/modern-module-resolution")
 const { mergeAndConcat } = require("merge-anything")
 
@@ -11,12 +12,10 @@ const { vitest } = require("./vitest")
 const { node } = require("./node")
 
 /**
- * @typedef RuleSet
- * @typedef Options
- * @property {string[]} files - The files to apply the rules to.
- * @property {RuleSet | boolean | undefined} html - Whether to enable html linting.
- * @property {RuleSet | boolean | undefined} node - Whether to enable node linting.
- * @property {RuleSet | boolean | undefined} prettier - Whether to disable rules that interfere with prettier.
+ * Files - The files to apply the rules to.
+ * Html - Whether to enable html linting.
+ * Node - Whether to enable node linting.
+ * Prettier - Whether to disable rules that interfere with prettier.
  * @property {RuleSet | boolean | undefined} react - Whether to enable react linting.
  * @property {RuleSet | boolean | undefined} reactNative - Whether to enable react-native linting.
  * @property {RuleSet | boolean | undefined} typescript - Whether to enable typescript linting.

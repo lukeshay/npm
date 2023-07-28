@@ -18,12 +18,9 @@ const mergedPackageJson = mergeAndConcat(DEFAULT_PACKAGE_JSON, packageJson)
  * @param {string} name - Name of the dependency.
  * @returns {boolean} Whether the dependency is installed.
  */
-const hasDependency = (name) => {
-	return (
-		Boolean(mergedPackageJson.dependencies[name]) ||
-		Boolean(mergedPackageJson.devDependencies[name])
-	)
-}
+const hasDependency = (name) =>
+	Boolean(mergedPackageJson.dependencies[name]) ||
+	Boolean(mergedPackageJson.devDependencies[name])
 
 /**
  * Gets the version of a dependency.
@@ -37,9 +34,11 @@ const getVersion = (name) =>
 			mergedPackageJson.devDependencies[name],
 	)
 
-const log = (...arguments_) =>
-	Boolean(process.env.DEBUG) &&
-	console.log("@lshay/eslint-config:", ...arguments_)
+const log = (...arguments_) => {
+	if (process.env.DEBUG) {
+		console.log("@lshay/eslint-config:", ...arguments_)
+	}
+}
 
 const allTestDirectories = [
 	"**/__e2e__/**",

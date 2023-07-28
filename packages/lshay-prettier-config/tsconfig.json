@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"noUncheckedIndexedAccess": true
 	},
-	"include": ["*.js"]
+	"include": ["index.js", "eslint.config.js", "merge.js"]
 }

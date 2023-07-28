@@ -3,5 +3,5 @@
 	"compilerOptions": {
 		"noUncheckedIndexedAccess": true
 	},
-	"include": ["*.js"]
+	"include": ["lib", "eslint.config.js"]
 }
