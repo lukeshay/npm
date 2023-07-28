@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.5
+
+### Patch Changes
+
+- accad37: Add import/react-native
+
 ## 0.3.4
 
 ### Patch Changes
