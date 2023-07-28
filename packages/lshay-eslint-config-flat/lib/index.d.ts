@@ -1,5 +1,4 @@
 export type ConfigOptions = {
-
 	/**
 	 * Whether to enable browser rules.
 	 */
