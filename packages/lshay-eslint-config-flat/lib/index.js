@@ -108,12 +108,13 @@ const CHERRY_PICKED_BASE_RULES = {
 	"one-var": "off",
 	"perfectionist/sort-union-types": "off",
 	"sonarjs/no-collapsible-if": "off",
+	"sort-imports": "off",
 	"sort-keys": "off",
 	"total-functions/no-unsafe-readonly-mutable-assignment": "off",
 }
 
 const BASE_CONFIG = {
-	ignores: ["dist/*", "node_modules/*", "build/*", "coverage/*"],
+	ignores: ["dist", "node_modules", "build", "coverage"],
 	languageOptions: {
 		globals: {
 			...globals.builtin,
@@ -556,8 +557,20 @@ exports.createConfig = (options) => {
 		},
 		JS_ONLY_CONFIG,
 	)
-
-	return [config, tsConfig, jsConfig, options.html && HTML_CONFIG].filter(
-		Boolean,
+	const cjsConfig = merge(
+		{
+			files: options.files?.filter(
+				(file) => file.includes("cjs") || file.includes("cts"),
+			) ?? ["**/*cjs", "**/*cts"],
+		},
+		COMMONJS_CONFIG,
 	)
+
+	return [
+		config,
+		tsConfig,
+		jsConfig,
+		cjsConfig,
+		options.html && HTML_CONFIG,
+	].filter(Boolean)
 }
