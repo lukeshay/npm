@@ -11,9 +11,32 @@ export type ConfigOptions = {
 	commonjs?: boolean
 
 	/**
+	 * Allowed casing for file names.
+	 *
+	 * Default `["kebabCase"]`.
+	 */
+	fileNameCases?: (
+		| "anyCase"
+		| "camelCase"
+		| "kebabCase"
+		| "pascalCase"
+		| "snakeCase"
+	)[]
+
+	/**
 	 * The files to lint.
 	 */
 	files?: string[]
+
+	/**
+	 * The files to lint globally.
+	 */
+	globalFiles?: string[]
+
+	/**
+	 * The files to ignore globally.
+	 */
+	globalIgnores?: string[]
 
 	/**
 	 * Whether to enable HTML rules.
@@ -24,6 +47,11 @@ export type ConfigOptions = {
 	 * The files to ignore.
 	 */
 	ignores?: string[]
+
+	/**
+	 * Whether to enable JSDoc rules.
+	 */
+	jsdoc?: boolean
 
 	/**
 	 * Whether to enable Node rules.

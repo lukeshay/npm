@@ -12,7 +12,6 @@ const sonarjs = require("eslint-plugin-sonarjs")
 // Const sonar = require( "eslint-plugin-sonar")
 const jsdoc = require("eslint-plugin-jsdoc")
 const unicorn = require("eslint-plugin-unicorn")
-const tsdoc = require("eslint-plugin-tsdoc")
 const typescript = require("@typescript-eslint/eslint-plugin")
 const typescriptParser = require("@typescript-eslint/parser")
 const totalFunctions = require("eslint-plugin-total-functions")
@@ -77,15 +76,19 @@ const CHERRY_PICKED_BASE_RULES = {
 	"fp/no-delete": "error",
 	"fp/no-events": "error",
 	"fp/no-get-set": "error",
-	"fp/no-let": "error",
+	// "fp/no-let": "error",
 	"fp/no-loops": "error",
 	"fp/no-mutating-assign": "error",
-	"fp/no-mutating-methods": "error",
-	"fp/no-mutation": ["error", { commonjs: true, exceptions: [] }],
+
+	/*
+	 * "fp/no-mutating-methods": "error",
+	 * "fp/no-mutation": ["error", { commonjs: true, exceptions: [] }],
+	 */
 	"fp/no-nil": "off",
 	"fp/no-proxy": "error",
 	"fp/no-this": "off",
 	"fp/no-valueof-field": "error",
+	"func-style": ["error", "declaration", { allowArrowFunctions: true }],
 	"import/no-named-as-default-member": "error",
 	"jsdoc/check-indentation": "error",
 	"jsdoc/check-line-alignment": "error",
@@ -93,28 +96,28 @@ const CHERRY_PICKED_BASE_RULES = {
 	"jsdoc/no-blank-block-descriptions": "error",
 	"jsdoc/no-blank-blocks": "error",
 	"jsdoc/no-types": "off",
-	"jsdoc/no-undefined-types": "off",
 	"jsdoc/require-description": "error",
 	"jsdoc/require-description-complete-sentence": "error",
-	"jsdoc/require-param-type": "off",
-	"jsdoc/require-property-type": "off",
-	"jsdoc/require-returns-type": "off",
+	"jsdoc/require-jsdoc": "off",
+	"jsdoc/require-param-type": "error",
+	"jsdoc/require-returns-type": "error",
 	"jsdoc/require-throws": "error",
 	"jsdoc/sort-tags": "error",
 	"max-lines": "off",
 	"max-lines-per-function": "off",
 	"no-ternary": "off",
 	"no-unused-vars": "off",
+	"no-void": "off",
 	"one-var": "off",
 	"perfectionist/sort-union-types": "off",
 	"sonarjs/no-collapsible-if": "off",
+	"sonarjs/no-nested-template-literals": "off",
 	"sort-imports": "off",
 	"sort-keys": "off",
 	"total-functions/no-unsafe-readonly-mutable-assignment": "off",
 }
 
 const BASE_CONFIG = {
-	ignores: ["dist", "node_modules", "build", "coverage"],
 	languageOptions: {
 		globals: {
 			...globals.builtin,
@@ -149,12 +152,19 @@ const BASE_CONFIG = {
 		...security.configs.recommended.rules,
 		...regexp.configs.recommended.rules,
 		...sonarjs.configs.recommended.rules,
-		...jsdoc.configs["recommended-typescript-error"].rules,
 		...perfectionist.configs["recommended-natural"].rules,
 		...totalFunctions.configs.all.rules,
+		...jsdoc.configs["recommended-typescript-error"].rules,
 		...CHERRY_PICKED_BASE_RULES,
 	},
 	settings: {
+		"import/parsers": {
+			"@typescript-eslint/parser": ALL_EXTENSIONS.flatMap((extension) => [
+				`.${extension}`,
+				`.m${extension}`,
+				`.c${extension}`,
+			]),
+		},
 		"import/resolver": {
 			typescript: {
 				alwaysTryTypes: true,
@@ -170,14 +180,21 @@ const BASE_CONFIG = {
 	},
 }
 
-const TS_ONLY_CONFIG = {
+const JSDOC_CONFIG = {
 	plugins: {
-		tsdoc,
+		jsdoc,
 	},
 	rules: {
+		"jsdoc/require-jsdoc": "error",
+	},
+}
+
+const TS_ONLY_CONFIG = {
+	rules: {
 		"jsdoc/require-param": "off",
+		"jsdoc/require-param-type": "off",
 		"jsdoc/require-returns": "off",
-		"tsdoc/syntax": "error",
+		"jsdoc/require-returns-type": "off",
 	},
 }
 
@@ -288,8 +305,10 @@ const REACT_BASE_CONFIG = {
 		"react/jsx-pascal-case": "error",
 		"react/no-danger": "error",
 		"react/no-unsafe": ["error", { checkAliases: true }],
+		"react/react-in-jsx-scope": "off",
 		"react/self-closing-comp": "error",
 		"react-hooks/exhaustive-deps": "error",
+		"react-perf/jsx-no-jsx-as-prop": "off",
 		"react-refresh/only-export-components": [
 			"error",
 			{ allowConstantExport: true, checkJS: true },
@@ -515,62 +534,103 @@ const PRETTIER_CONFIG = {
 
 const configOrEmpty = (enabled, config) => (enabled ? config : {})
 
-exports.createConfig = (options) => {
-	const config = mergeAndConcat(
-		BASE_CONFIG,
+/**
+ * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
+ * additional configurations are added based on the options provided.
+ * @param {import('.').ConfigOptions} options - The options to use when creating the config.
+ * @returns {Record<string, any>} The flat ESLint config.
+ */
+const createConfig = (options) => {
+	const cases = options.fileNameCases ?? ["kebabCase"]
+
+	const config = merge(
+		mergeAndConcat(
+			BASE_CONFIG,
+			configOrEmpty(options.files, {
+				files: options.files,
+			}),
+			configOrEmpty(options.ignores, {
+				ignores: options.ignores,
+			}),
+		),
+		{
+			rules: {
+				"unicorn/filename-case": [
+					"error",
+					{
+						cases: {
+							camelCase:
+								cases.includes("camelCase") || cases.includes("anyCase"),
+							kebabCase:
+								cases.includes("kebabCase") || cases.includes("anyCase"),
+							pascalCase:
+								cases.includes("pascalCase") || cases.includes("anyCase"),
+							snakeCase:
+								cases.includes("snakeCase") || cases.includes("anyCase"),
+						},
+					},
+				],
+			},
+		},
 		configOrEmpty(options.parserOptions, {
 			languageOptions: {
 				parserOptions: options.parserOptions,
 			},
 		}),
-		configOrEmpty(options.files, {
-			files: options.files,
-		}),
-		configOrEmpty(options.ignores, {
-			ignores: options.ignores,
-		}),
 		configOrEmpty(options.node, NODE_CONFIG),
-		configOrEmpty(options.react || options.reactNative, REACT_BASE_CONFIG),
+		configOrEmpty(options.react ?? options.reactNative, REACT_BASE_CONFIG),
 		configOrEmpty(options.react && !options.reactNative, REACT_WEB_CONFIG),
 		configOrEmpty(options.reactNative && !options.react, REACT_NATIVE_CONFIG),
 		configOrEmpty(options.vitest, VITEST_CONFIG),
 		configOrEmpty(options.commonjs, COMMONJS_CONFIG),
 		configOrEmpty(options.browser, BROWSER_CONFIG),
 		configOrEmpty(options.prettier, PRETTIER_CONFIG),
+		configOrEmpty(options.jsdoc, JSDOC_CONFIG),
 	)
 
-	const tsConfig = merge(
+	const tsFiles = options.files?.filter((file) => file.includes("ts"))
+	const jsFiles = options.files?.filter((file) => file.includes("js"))
+	const cjsFiles = options.files?.filter(
+		(file) => file.includes("cjs") || file.includes("cts"),
+	)
+
+	const tsOnlyConfig = merge(
 		{
-			files: options.files?.filter((file) => file.includes("ts")) ?? [
-				"**/*ts",
-				"**/*tsx",
-			],
+			files: tsFiles?.length ? tsFiles : ["**/*ts", "**/*tsx"],
 		},
 		TS_ONLY_CONFIG,
 	)
-	const jsConfig = merge(
+	const jsOnlyConfig = merge(
 		{
-			files: options.files?.filter((file) => file.includes("js")) ?? [
-				"**/*js",
-				"**/*jsx",
-			],
+			files: jsFiles?.length ? jsFiles : ["**/*js", "**/*jsx"],
 		},
 		JS_ONLY_CONFIG,
 	)
-	const cjsConfig = merge(
+	const cjsOnlyConfig = merge(
 		{
-			files: options.files?.filter(
-				(file) => file.includes("cjs") || file.includes("cts"),
-			) ?? ["**/*cjs", "**/*cts"],
+			files: cjsFiles?.length ? cjsFiles : ["**/*cjs", "**/*cts"],
 		},
 		COMMONJS_CONFIG,
 	)
 
 	return [
+		mergeAndConcat(
+			configOrEmpty(options.globalIgnores, {
+				ignores: options.globalIgnores,
+			}),
+			{
+				ignores: ["dist", "node_modules", "build", "coverage"],
+			},
+		),
+		configOrEmpty(options.globalFiles, {
+			ignores: options.globalFiles,
+		}),
 		config,
-		tsConfig,
-		jsConfig,
-		cjsConfig,
+		configOrEmpty(options.jsdoc, tsOnlyConfig),
+		jsOnlyConfig,
+		cjsOnlyConfig,
 		options.html && HTML_CONFIG,
 	].filter(Boolean)
 }
+
+exports.createConfig = createConfig
