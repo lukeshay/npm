@@ -1,5 +1,12 @@
 # @lshay/eslint-config-flat
 
+## 0.0.4
+
+### Patch Changes
+
+- 1c4a603: Enabled import/group-exports as error
+- 1c4a603: Disabled no-undefined
+
 ## 0.0.3
 
 ### Patch Changes
