@@ -1,7 +1,7 @@
 {
-	"extends": "@tsconfig/node18/tsconfig.json",
 	"compilerOptions": {
 		"noUncheckedIndexedAccess": true
 	},
+	"extends": "@tsconfig/node18/tsconfig.json",
 	"include": ["lib", "eslint.config.js", "types.d.ts"]
 }

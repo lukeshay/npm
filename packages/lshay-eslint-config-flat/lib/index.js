@@ -1,5 +1,4 @@
 /* @ts-check */
-
 const js = require("@eslint/js")
 const imprt = require("eslint-plugin-import")
 // eslint-disable-next-line id-length
@@ -89,8 +88,8 @@ const CHERRY_PICKED_BASE_RULES = {
 	"fp/no-this": "off",
 	"fp/no-valueof-field": "error",
 	"func-style": ["error", "declaration", { allowArrowFunctions: true }],
-	"import/no-named-as-default-member": "error",
 	"import/group-exports": "error",
+	"import/no-named-as-default-member": "error",
 	"jsdoc/check-indentation": "error",
 	"jsdoc/check-line-alignment": "error",
 	"jsdoc/no-bad-blocks": "error",
@@ -107,8 +106,8 @@ const CHERRY_PICKED_BASE_RULES = {
 	"max-lines": "off",
 	"max-lines-per-function": "off",
 	"no-ternary": "off",
-	"no-unused-vars": "off",
 	"no-undefined": "off",
+	"no-unused-vars": "off",
 	"no-void": "off",
 	"one-var": "off",
 	"perfectionist/sort-union-types": "off",
@@ -135,7 +134,6 @@ const BASE_CONFIG = {
 		etc,
 		fp,
 		import: imprt,
-		jsdoc,
 		perfectionist,
 		promise,
 		regexp,
@@ -156,7 +154,6 @@ const BASE_CONFIG = {
 		...sonarjs.configs.recommended.rules,
 		...perfectionist.configs["recommended-natural"].rules,
 		...totalFunctions.configs.all.rules,
-		...jsdoc.configs["recommended-typescript-error"].rules,
 		...CHERRY_PICKED_BASE_RULES,
 	},
 	settings: {
@@ -187,6 +184,7 @@ const JSDOC_CONFIG = {
 		jsdoc,
 	},
 	rules: {
+		...jsdoc.configs["recommended-typescript-error"].rules,
 		"jsdoc/require-jsdoc": "error",
 	},
 }
@@ -539,8 +537,8 @@ const configOrEmpty = (enabled, config) => (enabled ? config : {})
 /**
  * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
  * additional configurations are added based on the options provided.
- * @param {import('.').ConfigOptions} options - The options to use when creating the config.
- * @returns {Record<string, any>} The flat ESLint config.
+ * @param options - The options to use when creating the config.
+ * @returns The flat ESLint config.
  */
 const createConfig = (options) => {
 	const cases = options.fileNameCases ?? ["kebabCase"]
@@ -624,8 +622,8 @@ const createConfig = (options) => {
 				ignores: ["dist", "node_modules", "build", "coverage"],
 			},
 		),
-		configOrEmpty(options.globalFiles, {
-			ignores: options.globalFiles,
+		configOrEmpty(options.globalFiles?.length, {
+			files: options.globalFiles,
 		}),
 		config,
 		configOrEmpty(options.jsdoc, tsOnlyConfig),

@@ -1,3 +1,4 @@
+/* eslint-disable import/group-exports */
 type Configs = Record<
 	| "all"
 	| "react"
