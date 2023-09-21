@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.1
+
+### Patch Changes
+
+- f60f210: Upgraded dependencies
+
 ## 0.6.0
 
 ### Minor Changes

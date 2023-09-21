@@ -1,5 +1,12 @@
 # @lshay/eslint-config-flat
 
+## 0.0.5
+
+### Patch Changes
+
+- f60f210: Fixed bug where jsdoc rules were always loaded
+- f60f210: Upgraded dependencies
+
 ## 0.0.4
 
 ### Patch Changes
