@@ -1,5 +1,11 @@
 # @lshay/eslint-config-flat
 
+## 0.0.6
+
+### Patch Changes
+
+- aebd09a: Always import jsdoc
+
 ## 0.0.5
 
 ### Patch Changes
