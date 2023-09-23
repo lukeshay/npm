@@ -71,5 +71,7 @@ const createSmartConfig = (...configs) =>
 		...configs,
 	)
 
-exports.createConfig = createConfig
-exports.createSmartConfig = createSmartConfig
+module.exports = {
+	createConfig,
+	createSmartConfig,
+}

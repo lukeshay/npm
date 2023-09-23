@@ -67,7 +67,7 @@ const CHERRY_PICKED_BASE_RULES = {
 	"etc/no-const-enum": "error",
 	"etc/no-enum": "error",
 	"etc/no-implicit-any-catch": "error",
-	"etc/no-misused-generics": "error",
+	// "etc/no-misused-generics": "error",
 	"etc/no-t": "error",
 	"etc/prefer-interface": "off",
 	"fp/no-arguments": "error",
@@ -134,6 +134,7 @@ const BASE_CONFIG = {
 		etc,
 		fp,
 		import: imprt,
+		jsdoc,
 		perfectionist,
 		promise,
 		regexp,
@@ -180,9 +181,6 @@ const BASE_CONFIG = {
 }
 
 const JSDOC_CONFIG = {
-	plugins: {
-		jsdoc,
-	},
 	rules: {
 		...jsdoc.configs["recommended-typescript-error"].rules,
 		"jsdoc/require-jsdoc": "error",

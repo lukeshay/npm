@@ -80,25 +80,26 @@ const supportedFileTypes = `**/*{${allExtensions.join(",")}}`
  * @param {import(".").Options} options - The options.
  * @returns {string} The source type. @default "commonjs".
  */
-exports.getSourceType = (options) =>
+const getSourceType = (options) =>
 	options.sourceType ?? mergedPackageJson.type ?? "commonjs"
 
-exports.allTestDirectories = allTestDirectories
-exports.allTestExtensions = allTestExtensions
-exports.allTsExtensions = allTsExtensions
-exports.allJsExtensions = allJsExtensions
-exports.allExtensions = allExtensions
-exports.allTsTestExtensions = allTsTestExtensions
-exports.allJsTestExtensions = allJsTestExtensions
-exports.allTestExtensions = allTestExtensions
-exports.supportedTsTestFileTypes = supportedTsTestFileTypes
-exports.supportedJsTestFileTypes = supportedJsTestFileTypes
-exports.supportedTestFileTypes = supportedTestFileTypes
-exports.supportedTsFileTypes = supportedTsFileTypes
-exports.supportedJsFileTypes = supportedJsFileTypes
-exports.supportedFileTypes = supportedFileTypes
-
-exports.packageJson = mergedPackageJson
-exports.hasDependency = hasDependency
-exports.getVersion = getVersion
-exports.log = log
+module.exports = {
+	allExtensions,
+	allJsExtensions,
+	allJsTestExtensions,
+	allTestDirectories,
+	allTestExtensions,
+	allTsExtensions,
+	allTsTestExtensions,
+	getSourceType,
+	getVersion,
+	hasDependency,
+	log,
+	mergedPackageJson,
+	supportedFileTypes,
+	supportedJsFileTypes,
+	supportedJsTestFileTypes,
+	supportedTestFileTypes,
+	supportedTsFileTypes,
+	supportedTsTestFileTypes,
+}
