@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.7.0
+
+### Minor Changes
+
+- 8b0fcc6: Updated markdown to use spaces instead of tabs
+
 ## 0.6.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @lshay/eslint-config-flat
 
+## 0.0.7
+
+### Patch Changes
+
+- 8b0fcc6: Added default for global files
+
 ## 0.0.6
 
 ### Patch Changes

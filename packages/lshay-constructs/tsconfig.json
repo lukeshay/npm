@@ -1,6 +1,9 @@
 {
-	"extends": "@lshay/tsconfig/bundler.json",
-	"include": ["eslint.config.cjs", "src", "support"],
+	"compilerOptions": {
+		"noUncheckedIndexedAccess": true
+	},
+	"extends": "@tsconfig/node18/tsconfig.json",
+	"include": ["eslint.config.js", "src", "support"],
 	"typedocOptions": {
 		"entryPoints": ["src/index.ts"],
 		"out": "docs",

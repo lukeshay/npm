@@ -16,7 +16,7 @@
 		"lint": "yarn workspaces foreach run lint",
 		"lint:fix": "yarn workspaces foreach run lint:fix",
 		"format": "prettier --write --check .",
-		"release": "changeset version && yarn prettier:fix && git add . && git commit -m 'new versions' && changeset publish && git push --follow-tags"
+		"release": "changeset version && yarn format && git add . && git commit -m 'new versions' && changeset publish && git push --follow-tags"
 	},
 	"lint-staged": {
 		"*": [
