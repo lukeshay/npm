@@ -1,0 +1,67 @@
+{
+	"name": "@lshay/constructs",
+	"version": "0.0.0",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com/lukeshay/npm.git",
+		"directory": "packages/lshay-constructs"
+	},
+	"license": "MIT",
+	"author": "Luke Shay <https://lukeshay.com>",
+	"type": "commonjs",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"files": [
+		"dist",
+		"support",
+		"README.md",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"gen": "typedoc && prettier --write docs",
+		"build": "pkgroll",
+		"clean": "exit 0",
+		"test": "exit 0",
+		"lint": "eslint .",
+		"lint:fix": "yarn lint --fix",
+		"format": "prettier --write --check ."
+	},
+	"prettier": "../../.prettierrc.js",
+	"devDependencies": {
+		"@aws-sdk/client-acm": "^3.461.0",
+		"@lshay/eslint-config-flat": "workspace:^",
+		"@lshay/tsconfig": "workspace:^",
+		"@tsconfig/node18": "^18.2.2",
+		"@types/aws-lambda": "^8.10.129",
+		"aws-cdk-lib": "^2.111.0",
+		"constructs": "^10.3.0",
+		"eslint": "^8.54.0",
+		"pkgroll": "^2.0.1",
+		"prettier": "^3.1.0",
+		"rimraf": "^5.0.5",
+		"typedoc": "^0.25.4",
+		"typedoc-plugin-markdown": "^3.17.1",
+		"typescript": "^5.3.2"
+	},
+	"engines": {
+		"node": "16.x || 18.x || 20.x"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"aws-cdk-lib": "*",
+		"constructs": "*"
+	}
+}

@@ -90,21 +90,11 @@ const CHERRY_PICKED_BASE_RULES = {
 	"func-style": ["error", "declaration", { allowArrowFunctions: true }],
 	"import/group-exports": "error",
 	"import/no-named-as-default-member": "error",
-	"jsdoc/check-indentation": "error",
-	"jsdoc/check-line-alignment": "error",
-	"jsdoc/no-bad-blocks": "error",
-	"jsdoc/no-blank-block-descriptions": "error",
-	"jsdoc/no-blank-blocks": "error",
-	"jsdoc/no-types": "off",
-	"jsdoc/require-description": "error",
-	"jsdoc/require-description-complete-sentence": "error",
 	"jsdoc/require-jsdoc": "off",
-	"jsdoc/require-param-type": "error",
-	"jsdoc/require-returns-type": "error",
-	"jsdoc/require-throws": "error",
-	"jsdoc/sort-tags": "error",
 	"max-lines": "off",
 	"max-lines-per-function": "off",
+	// eslint-disable-next-line @typescript-eslint/no-magic-numbers
+	"max-statements": ["error", 30],
 	"no-ternary": "off",
 	"no-undefined": "off",
 	"no-unused-vars": "off",
@@ -183,12 +173,25 @@ const BASE_CONFIG = {
 const JSDOC_CONFIG = {
 	rules: {
 		...jsdoc.configs["recommended-typescript-error"].rules,
+		"jsdoc/check-indentation": "error",
+		"jsdoc/check-line-alignment": "error",
+		"jsdoc/no-bad-blocks": "error",
+		"jsdoc/no-blank-block-descriptions": "error",
+		"jsdoc/no-blank-blocks": "error",
+		"jsdoc/no-types": "off",
+		"jsdoc/require-description": "error",
+		"jsdoc/require-description-complete-sentence": "error",
 		"jsdoc/require-jsdoc": "error",
+		"jsdoc/require-param-type": "error",
+		"jsdoc/require-returns-type": "error",
+		"jsdoc/require-throws": "error",
+		"jsdoc/sort-tags": "error",
 	},
 }
 
 const TS_ONLY_CONFIG = {
 	rules: {
+		"jsdoc/no-types": "error",
 		"jsdoc/require-param": "off",
 		"jsdoc/require-param-type": "off",
 		"jsdoc/require-returns": "off",
@@ -198,6 +201,7 @@ const TS_ONLY_CONFIG = {
 
 const JS_ONLY_CONFIG = {
 	rules: {
+		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-unsafe-argument": "off",
 		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-unsafe-call": "off",
@@ -532,13 +536,15 @@ const PRETTIER_CONFIG = {
 
 const configOrEmpty = (enabled, config) => (enabled ? config : {})
 
+/* eslint-disable jsdoc/no-types */
 /**
  * Creates an ESLint config based on the provided options. There is a base configuration that is always used, and then
  * additional configurations are added based on the options provided.
- * @param options - The options to use when creating the config.
- * @returns The flat ESLint config.
+ * @param {ConfigOptions} options - The options to use when creating the config.
+ * @returns {Record<string, unknown>[]} The flat ESLint config.
  */
 const createConfig = (options) => {
+	/* eslint-enable jsdoc/no-types */
 	const cases = options.fileNameCases ?? ["kebabCase"]
 
 	const config = merge(
@@ -620,11 +626,11 @@ const createConfig = (options) => {
 				ignores: ["dist", "node_modules", "build", "coverage"],
 			},
 		),
-		configOrEmpty(options.globalFiles?.length, {
-			files: options.globalFiles,
-		}),
+		{
+			files: options.globalFiles ?? ["*.ts", "*.js", "*.tsx", "*.jsx"],
+		},
 		config,
-		configOrEmpty(options.jsdoc, tsOnlyConfig),
+		tsOnlyConfig,
 		jsOnlyConfig,
 		cjsOnlyConfig,
 		options.html && HTML_CONFIG,

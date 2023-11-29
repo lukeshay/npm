@@ -1,0 +1,9 @@
+{
+	"extends": "@lshay/tsconfig/bundler.json",
+	"include": ["eslint.config.cjs", "src", "support"],
+	"typedocOptions": {
+		"entryPoints": ["src/index.ts"],
+		"out": "docs",
+		"plugin": ["typedoc-plugin-markdown"]
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"name": "@lshay/tsconfig",
+	"version": "0.0.0",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com/lukeshay/npm.git",
+		"directory": "packages/lshay-tsconfig"
+	},
+	"license": "MIT",
+	"author": "Luke Shay <https://lukeshay.com>",
+	"type": "commonjs",
+	"main": "./index.js",
+	"files": [
+		"./*.json",
+		"README.md",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"build": "exit 0",
+		"clean": "exit 0",
+		"test": "exit 0",
+		"lint": "exit 0",
+		"lint:fix": "exit 0",
+		"format": "prettier --write --check ."
+	},
+	"prettier": "../../.prettierrc.js",
+	"devDependencies": {
+		"prettier": "^3.1.0",
+		"typescript": "^5.3.2"
+	},
+	"engines": {
+		"node": "16.x || 18.x || 20.x"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

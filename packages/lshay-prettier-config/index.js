@@ -9,6 +9,10 @@ const config = {
 	jsxSingleQuote: false,
 	overrides: [
 		{
+			files: ["**/*.md"],
+			useTabs: false,
+		},
+		{
 			files: ["**/.{yml,yaml}"],
 			options: {
 				tabWidth: 4,
