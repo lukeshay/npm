@@ -18,12 +18,16 @@ class CrossRegionCertificateProvider extends Construct {
 		super(scope, id)
 
 		const code = Code.fromAsset(
-			path.dirname(
-				// eslint-disable-next-line unicorn/prefer-module
-				require.resolve(
-					// eslint-disable-next-line n/no-missing-require
-					"@lshay/constructs/support/cross-region-certificate/index.js",
+			path.resolve(
+				path.dirname(
+					// eslint-disable-next-line unicorn/prefer-module
+					require.resolve(
+						// eslint-disable-next-line n/no-missing-require
+						"@lshay/constructs",
+					),
 				),
+				"support",
+				"cross-region-certificate-provider",
 			),
 		)
 
