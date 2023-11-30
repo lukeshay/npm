@@ -1,5 +1,11 @@
 # @lshay/constructs
 
+## 0.0.3
+
+### Patch Changes
+
+- Correct build
+
 ## 0.0.2
 
 ### Patch Changes
