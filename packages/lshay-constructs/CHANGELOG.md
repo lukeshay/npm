@@ -1,5 +1,11 @@
 # @lshay/constructs
 
+## 0.0.2
+
+### Patch Changes
+
+- 8d6b2e1: Correctly resolve support files'
+
 ## 0.0.1
 
 ### Patch Changes
