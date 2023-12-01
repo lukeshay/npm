@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/constructs",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
@@ -19,7 +19,7 @@
 	],
 	"scripts": {
 		"gen": "typedoc && prettier --write docs",
-		"build": "yarn gen && rimraf dist && tsc --project tsconfig.build.json",
+		"build": "yarn gen && rimraf dist '*.tsbuildinfo' && tsc --project tsconfig.build.json",
 		"clean": "exit 0",
 		"test": "exit 0",
 		"lint": "eslint .",
