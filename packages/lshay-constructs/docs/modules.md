@@ -24,7 +24,7 @@ Status of the certificate.
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:90
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:91](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L91)
 
 ---
 
@@ -45,7 +45,7 @@ Properties for creating a [CrossRegionCertificate](classes/CrossRegionCertificat
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:103
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:104](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L104)
 
 ---
 
@@ -57,4 +57,4 @@ The validation method for the certificate.
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:85
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:86](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L86)

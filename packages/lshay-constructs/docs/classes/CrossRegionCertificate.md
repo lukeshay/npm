@@ -55,7 +55,7 @@ Construct.constructor
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:133
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:140](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L140)
 
 ## Properties
 
@@ -65,7 +65,7 @@ packages/lshay-constructs/src/constructs/cross-region-certificate.ts:133
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:128
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:128](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L128)
 
 ---
 
@@ -75,7 +75,7 @@ packages/lshay-constructs/src/constructs/cross-region-certificate.ts:128
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:131
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:130](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L130)
 
 ---
 
@@ -85,7 +85,7 @@ packages/lshay-constructs/src/constructs/cross-region-certificate.ts:131
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:126
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:132](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L132)
 
 ---
 
@@ -95,7 +95,7 @@ packages/lshay-constructs/src/constructs/cross-region-certificate.ts:126
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:127
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:134](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L134)
 
 ---
 
@@ -121,7 +121,7 @@ node_modules/constructs/lib/construct.d.ts:265
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:129
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:136](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L136)
 
 ---
 
@@ -131,7 +131,7 @@ packages/lshay-constructs/src/constructs/cross-region-certificate.ts:129
 
 #### Defined in
 
-packages/lshay-constructs/src/constructs/cross-region-certificate.ts:130
+[packages/lshay-constructs/src/constructs/cross-region-certificate.ts:138](https://github.com/LukeShay/npm/blob/5159033/packages/lshay-constructs/src/constructs/cross-region-certificate.ts#L138)
 
 ## Methods
 

@@ -8,7 +8,7 @@ import { Code, Function, Runtime } from "aws-cdk-lib/aws-lambda"
 import { CustomResource, Duration, Stack } from "aws-cdk-lib/core"
 import { Provider } from "aws-cdk-lib/custom-resources"
 import { Construct } from "constructs"
-import * as path from "node:path"
+import * as url from "node:url"
 
 /** @internal */
 class CrossRegionCertificateProvider extends Construct {
@@ -18,16 +18,8 @@ class CrossRegionCertificateProvider extends Construct {
 		super(scope, id)
 
 		const code = Code.fromAsset(
-			path.resolve(
-				path.dirname(
-					// eslint-disable-next-line unicorn/prefer-module
-					require.resolve(
-						// eslint-disable-next-line n/no-missing-require
-						"@lshay/constructs",
-					),
-				),
-				"support",
-				"cross-region-certificate-provider",
+			url.fileURLToPath(
+				new url.URL("../../support/cross-region-certificate", import.meta.url),
 			),
 		)
 

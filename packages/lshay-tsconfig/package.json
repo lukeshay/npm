@@ -1,6 +1,6 @@
 {
 	"name": "@lshay/tsconfig",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com/lukeshay/npm.git",
@@ -11,7 +11,10 @@
 	"type": "commonjs",
 	"main": "./index.js",
 	"files": [
-		"./*.json",
+		"./bundler-dom.json",
+		"./bundler.json",
+		"./tsc-dom.json",
+		"./tsc.json",
 		"README.md",
 		"CHANGELOG.md"
 	],

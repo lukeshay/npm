@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"noUncheckedIndexedAccess": true
+		"outDir": "dist"
 	},
-	"extends": "@tsconfig/node18/tsconfig.json",
-	"include": ["eslint.config.js", "src", "support"],
+	"extends": "@lshay/tsconfig/tsc.json",
+	"include": ["eslint.config.js", "src"],
 	"typedocOptions": {
 		"entryPoints": ["src/index.ts"],
 		"out": "docs",
